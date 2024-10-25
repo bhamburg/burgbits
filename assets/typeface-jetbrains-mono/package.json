@@ -1,0 +1,35 @@
+{
+  "name": "typeface-jetbrains-mono",
+  "version": "2.0.1",
+  "description": "JetBrains Mono typeface",
+  "keywords": [
+    "typeface",
+    "font",
+    "font family",
+    "jetbrains-mono"
+  ],
+  "repository": "https://github.com/paleite/typeface-jetbrains-mono",
+  "license": "MIT",
+  "author": "Patrick Eriksson <paleite@users.noreply.github.com> (https://github.com/paleite)",
+  "main": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "napa JetBrains/JetBrainsMono",
+    "build": "node scripts/build.js",
+    "clean": "rm -rf dist/*",
+    "prerelease": "yarn run build",
+    "release": "np"
+  },
+  "devDependencies": {
+    "fontkit": "^1.8.1",
+    "globby": "^11.0.1",
+    "napa": "^3.0.0",
+    "np": "^7.5.0",
+    "prettier": "^2.4.1"
+  },
+  "np": {
+    "tests": false
+  }
+}
