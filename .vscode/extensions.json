@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "visualstudioexptteam.vscodeintellicode",
+    "unifiedjs.vscode-mdx",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "henrynguyen5-vsc.vsc-nvm",
+    "mrmlnc.vscode-scss",
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "jock.svg"
+  ]
+}

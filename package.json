@@ -1,0 +1,28 @@
+{
+  "name": "burgbits",
+  "version": "1.0.0",
+  "description": "Brian Hamburg's personal portfolio and blog",
+  "license": "MIT",
+  "repository": "https://github.com/bhamburg/burgbits-nuxt",
+  "homepage": "https://burgbits.com",
+  "contributors": [
+    "Zoltán Szőgyényi (https://github.com/themesberg/tailwind-nuxt-starter)"
+  ],
+  "author": "Brian Hamburg",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 4639",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "nuxt": "^3.13.2",
+    "typescript": "^5.6.3",
+    "vue-tsc": "^2.1.6"
+  },
+  "dependencies": {
+    "flowbite": "^2.4.1"
+  }
+}
