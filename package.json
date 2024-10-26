@@ -17,12 +17,15 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "latest",
+    "@nuxtjs/color-mode": "latest",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "nuxt": "^3.13.2",
     "typescript": "^5.6.3",
     "vue-tsc": "^2.1.6"
   },
   "dependencies": {
-    "flowbite": "^2.4.1"
+    "@tailwindcss/typography": "^0.5.15",
+    "flowbite": "^2.5.2"
   }
 }

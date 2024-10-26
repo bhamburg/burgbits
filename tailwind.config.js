@@ -1,3 +1,5 @@
+import typography from '@tailwindcss/typography'
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -8,9 +10,14 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: 'Inter, ui-sans-serif, system-ui, -apple-system, Arial, Roboto, sans-serif',
+      },
+    },
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    typography(),
   ],
 }
