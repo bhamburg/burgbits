@@ -25,7 +25,6 @@
     "vue-tsc": "^2.1.6"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "flowbite": "^2.5.2"
+    "@tailwindcss/typography": "^0.5.15"
   }
 }
