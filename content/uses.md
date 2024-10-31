@@ -1,4 +1,4 @@
-# Uses
+## Tools and tech that I use on a regular basis
 
 [What is a /uses page?](https://github.com/wesbos/awesome-uses/)
 

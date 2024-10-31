@@ -8,10 +8,11 @@ const props = defineProps({
 
 <template>
   <Jumbotron>
-    <h1>{{ error?.statusCode }}</h1>
+    <h1>{{ error?.statusCode || 'Error'}}</h1>
   </Jumbotron>
-  <article>
-    <p>These are not the bits you are looking for.</p>
-    <NuxtLink to="/">Go home.</NuxtLink>
-  </article>
+  <Section class="text-center">
+    <h2>Uh oh...</h2>
+    <p>There's been a problem.</p>
+    <Button to="/" class="solid mt-10">Go to home</Button>
+  </Section>
 </template>

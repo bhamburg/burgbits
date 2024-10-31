@@ -5,9 +5,9 @@ useHead({
 </script>
 
 <template>
-  <NuxtLayout>
+  <NuxtLayout class="min-h-screen flex flex-col justify-between">
     <AppHeader />
     <NuxtPage />
-    <AppFooter />
+    <AppFooter class="mt-auto" />
   </NuxtLayout>
 </template>
