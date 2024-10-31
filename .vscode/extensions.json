@@ -10,6 +10,7 @@
     "mrmlnc.vscode-scss",
     "ms-vscode.vscode-typescript-next",
     "bradlc.vscode-tailwindcss",
-    "jock.svg"
+    "jock.svg",
+    "cpylua.language-postcss"
   ]
 }

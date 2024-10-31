@@ -1,7 +1,5 @@
 # Uses
 
-#### Tools and tech I use on a regular basis
-
 [What is a /uses page?](https://github.com/wesbos/awesome-uses/)
 
 ## Hardware
@@ -63,10 +61,9 @@
 - [MuseScore](https://musescore.org/)
 
 ### This Site
-- [VuePress](https://v2.vuepress.vuejs.org/) <Badge type="tip" text="v2" vertical="top" />
-- [Google Sheets](https://docs.google.com/spreadsheets/d/e/2PACX-1vT2nbU2EQmkeReaRu9oI9wBMAvH9j-2S0TM787O8X8S6wQ2zh1Clbdhp2lmzwZ9AiN-a6YJQqYnEpxj/pubhtml)
-- [Google Analytics](https://marketingplatform.google.com/about/analytics)
-- [GitHub](https://github.com/bhamburg/burgbits-vuepress2)
+- [Vue.js](https://vuejs.org/)
+- [Nuxt](https://www.nuxt.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [Netlify](https://netlify.com/)
 
 ### Collection

@@ -17,6 +17,12 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
   ],
-
+  postcss: {
+    plugins: {
+      'postcss-custom-media': {},
+      'postcss-nested': {},
+      'postcss-simple-vars': {},
+    }
+  },
   compatibilityDate: '2024-10-24'
 })
