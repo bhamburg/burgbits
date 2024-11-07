@@ -25,10 +25,10 @@ const parseGoodreads = async (url: string) => {
   }
 }
 
-export default defineEventHandler(async () => {
+export default defineCachedEventHandler(async () => {
   return {
     fetched: new Date(),
     currently: await parseGoodreads(currentlyUrl),
     read: await parseGoodreads(readUrl),
   }
-})
+}, { maxAge: 60 /* seconds */ })

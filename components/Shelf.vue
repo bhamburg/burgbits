@@ -7,5 +7,5 @@ const shelf = props.shelf
 
 <template>
   <h3>{{ title }}</h3>
-  <div>{{ data[shelf] }}</div>
+  <div>{{ data[shelf].items }}</div>
 </template>

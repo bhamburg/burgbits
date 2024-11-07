@@ -30,10 +30,10 @@ const getLatestPlaythrough = (datesArray: any[]) => {
   }).sort().at(-1)
 }
 
-export default defineEventHandler(async () => {
+export default defineCachedEventHandler(async () => {
   return {
     fetched: new Date(),
     playing: await parseGrouvee(playingApi),
     finished: await parseGrouvee(finishedApi),
   }
-})
+}, { maxAge: 60 /* seconds */ })

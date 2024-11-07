@@ -2,7 +2,7 @@
   <ClientOnly>
     <div 
       v-on:click="flip"
-      :class="['flip-card w-64 h-64', {active: flipped}]"
+      :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', {active: flipped}]"
       title="Click me!"
     >
       <div class="flip-card-inner">
