@@ -1,1 +1,3 @@
-## A snapshot of what’s currently happening in the Life of Brian
+## Current happenings in the Life of Brian
+
+Hello, world.

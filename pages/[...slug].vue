@@ -19,7 +19,7 @@ const props = defineProps({
       </template>
       <template #not-found>
         <Jumbotron>
-          <h1>404</h1>
+          <h1>404 Error</h1>
         </Jumbotron>
         <Section class="text-center">
           <h2>Page Not Found</h2>

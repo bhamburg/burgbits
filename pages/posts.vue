@@ -1,5 +1,5 @@
 <template>
   <Jumbotron>
-    <h1>Posts</h1>
+    <h1>Blog Posts</h1>
   </Jumbotron>
 </template>

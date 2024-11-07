@@ -25,6 +25,7 @@
     "vue-tsc": "^2.1.6"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.15"
+    "@tailwindcss/typography": "^0.5.15",
+    "node-html-parser": "^6.1.13"
   }
 }
