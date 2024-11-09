@@ -1,12 +1,13 @@
 import { parse } from 'node-html-parser'
 
 const appName = 'Goodreads'
-const goodreadsUrl = 'https://www.goodreads.com'
-const profileUrl = goodreadsUrl + '/user/show/4284038-brian-hamburg'
-const currentlyUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=currently-reading&sort=date_added&view=covers';
-const readUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=read&sort=date_read&view=covers&per_page=100';
 const fetchedDate = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
 const fetchedTime = new Date().toLocaleTimeString('en-us')
+const goodreadsUrl = 'https://www.goodreads.com'
+const profileUrl = goodreadsUrl + '/user/show/4284038-brian-hamburg'
+
+const currentlyUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=currently-reading&sort=date_added&view=covers';
+const readUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=read&sort=date_read&view=covers&per_page=100';
 
 const parseGoodreads = async (url: string) => {
   const data = await $fetch<string>(url)
@@ -22,10 +23,7 @@ const parseGoodreads = async (url: string) => {
       url: goodreadsUrl + row.querySelector('.title')?.getElementsByTagName('a').at(0)?.getAttribute('href'),
     })
   })
-  return {
-    url,
-    items
-  }
+  return items
 }
 
 export default defineCachedEventHandler(async () => {
@@ -33,7 +31,17 @@ export default defineCachedEventHandler(async () => {
     appName,
     profileUrl,
     fetched: `${fetchedDate} at ${fetchedTime}`,
-    currently: await parseGoodreads(currentlyUrl),
-    read: await parseGoodreads(readUrl),
+    shelves: [
+      { 
+        title: 'Currently Reading',
+        fetchedFrom: currentlyUrl,
+        items: await parseGoodreads(currentlyUrl),
+      },
+      { 
+        title: 'Recently Read',
+        fetchedFrom: readUrl,
+        items: await parseGoodreads(readUrl),
+      }
+    ]
   }
 }, { maxAge: 60 /* seconds */ })

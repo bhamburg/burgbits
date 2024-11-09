@@ -1,10 +1,10 @@
 ## Who is Brian Hamburg?
 
 > Father of twins.  
-  Strummer of strings.
-  Wrangler of the Web.
-  Implementer of interfaces.
-  Purveyor of pixels.
+  Strummer of strings.  
+  Wrangler of the Web.  
+  Implementer of interfaces.  
+  Purveyor of pixels.  
 
 ![Hamburg Family](/assets/images/pluto-polynesian.jpg)
 *The Hamburgs in Walt Disney World*

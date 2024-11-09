@@ -15,8 +15,7 @@
         <em>—Mark Twain</em>
       </p>
     </blockquote>
-    <Shelf api="/api/books" shelf="currently" title="Currently Reading" />
-    <Shelf api="/api/books" shelf="read" title="Recently Read" />
+    <Shelf api="/api/books" />
 
     <h2>Games</h2>
     <blockquote>
@@ -26,8 +25,7 @@
         <em>—Shigeru Miyamoto</em>
       </p>
     </blockquote>
-    <Shelf api="/api/games" shelf="playing" title="Currently Playing" />
-    <Shelf api="/api/games" shelf="finished" title="Recently Finished" />
+    <Shelf api="/api/games" />
   </Section>
 </template>
 

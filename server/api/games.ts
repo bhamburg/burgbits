@@ -21,11 +21,7 @@ const parseGrouvee = async (api: string) => {
       url: grouveeUrl + game?.game?.url,
     })
   })
-  return {
-    fetchedFrom: api,
-    url: grouveeUrl + shelfUrl + '?o=-latest_finish',
-    items,
-  }
+  return items
 }
 
 const getLatestPlaythrough = (datesArray: any[]) => {
@@ -39,7 +35,17 @@ export default defineCachedEventHandler(async () => {
     appName,
     profileUrl,
     fetched: `${fetchedDate} at ${fetchedTime}`,
-    playing: await parseGrouvee(playingApi),
-    finished: await parseGrouvee(finishedApi),
+    shelves: [
+      { 
+        title: 'Currently Playing',
+        fetchedFrom: playingApi,
+        items: await parseGrouvee(playingApi),
+      },
+      { 
+        title: 'Recently Finished',
+        fetchedFrom: finishedApi,
+        items: await parseGrouvee(finishedApi),
+      }
+    ],
   }
 }, { maxAge: 60 /* seconds */ })

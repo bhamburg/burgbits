@@ -17,7 +17,7 @@ useHead({
 <style lang="postcss">
 section {
   article {
-    @apply mx-4 mt-4;
+    @apply mx-4;
   }
   h2 {
     @apply font-black text-3xl md:text-4xl lg:text-5xl mb-6 mt-10;
@@ -51,8 +51,7 @@ section {
   ul {
     @apply list-disc ml-4;
     ul {
-      @apply my-0;
-      list-style-type: circle;
+      @apply my-0 list-[circle];
     }
   }
   ol {
