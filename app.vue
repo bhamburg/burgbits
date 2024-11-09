@@ -1,6 +1,8 @@
 <script setup lang="ts">
 useHead({
-  title: 'BurgBits',
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - BurgBits` : 'BurgBits';
+  }
 })
 </script>
 
@@ -20,10 +22,16 @@ section {
     @apply mx-4;
   }
   h2 {
-    @apply font-black text-3xl md:text-4xl lg:text-5xl mb-6 mt-10;
+    @apply font-black text-3xl md:text-4xl mb-6 mt-10;
   }
   h3 {
-    @apply font-black text-2xl md:text-3xl;
+    @apply font-black text-2xl;
+  }
+  h4 {
+    @apply font-black text-xl
+  }
+  h5, h6 {
+    @apply font-black
   }
   h3, p, ul, blockquote  {
     @apply mb-6;

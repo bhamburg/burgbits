@@ -31,7 +31,7 @@ const isOpen = ref(false);
               About
             </NuxtLink>
           </li>
-          <li>
+          <li class="hidden">
             <NuxtLink to="/posts" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
               Blog
             </NuxtLink>

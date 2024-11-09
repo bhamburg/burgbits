@@ -1,3 +1,4 @@
+Last updated in November 2024.  
 [What is a /uses page?](https://github.com/wesbos/awesome-uses/){:target="_blank"}
 
 ## Hardware

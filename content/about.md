@@ -1,4 +1,4 @@
-## Who is Brian Hamburg?
+## Who is this Brian Hamburg character?
 
 > Father of twins.  
   Strummer of strings.  
@@ -6,7 +6,7 @@
   Implementer of interfaces.  
   Purveyor of pixels.  
 
-![Hamburg Family](/assets/images/pluto-polynesian.jpg)
+![Hamburg Family](images/pluto-polynesian.jpg)
 *The Hamburgs in Walt Disney World*
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.

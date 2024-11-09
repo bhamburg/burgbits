@@ -8,7 +8,7 @@ const { data } = await useFetch<any>(props.api)
   <div v-for="shelf in data.shelves">
     <h3 class="text-center md:text-left">{{ shelf.title }}</h3>
     <div class="flex flex-row flex-wrap items-end justify-center md:justify-start">
-      <NuxtLink v-for="item in shelf.items.slice(0, 15)" 
+      <NuxtLink v-for="item in shelf.items.slice(0, 17)" 
         :key="item.title"
         :title="
           item.title 

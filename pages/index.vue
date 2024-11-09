@@ -23,81 +23,32 @@
     </Jumbotron>
 
     <Section>
-      <h2>Latest Posts</h2>
-      <div class="flex">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4 bg-white dark:bg-zinc-700">
-          <img
-            class="w-full"
-            src="https://tailwindcss.com/img/card-top.jpg"
-            alt="Sunset in the mountains"
-          />
-          <div class="px-6 py-4 pb-2">
-            <div class="font-bold text-xl mb-2 dark:text-white">The Coldest Sunset</div>
-            <p class="text-zinc-700 dark:text-zinc-300">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-              quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-              nihil.
-            </p>
-          </div>
-          <div class="px-6 py-4">
-            <span class="badge mr-2">#photography</span>
-            <span class="badge mr-2">#travel</span>
-            <span class="badge">#winter</span>
-          </div>
-          <div class="px-6 py-4 dark-mode">
-            <span class="badge mr-2">#staysdark</span>
-            <span class="badge force-light">#stayslight</span>
-          </div>
+      <article class="flex flex-col md:flex-row mt-10">
+        <div class="mx-4">
+          <h3>Software Engineer</h3>
+          <p>
+            With over a decade of experience building user interfaces for 
+            the Web and providing technical support, my focus has always been 
+            to remove friction from the user experience.
+          </p>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4 bg-white dark:bg-zinc-700">
-          <img
-            class="w-full"
-            src="https://tailwindcss.com/img/card-top.jpg"
-            alt="Sunset in the mountains"
-          />
-          <div class="px-6 py-4 pb-2">
-            <div class="font-bold text-xl mb-2 dark:text-white">The Coldest Sunset</div>
-            <p class="text-zinc-700 dark:text-zinc-300">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-              quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-              nihil.
-            </p>
-          </div>
-          <div class="px-6 py-4">
-            <span class="badge mr-2">#photography</span>
-            <span class="badge mr-2">#travel</span>
-            <span class="badge">#winter</span>
-          </div>
-          <div class="px-6 py-4 dark-mode">
-            <span class="badge mr-2">#staysdark</span>
-            <span class="badge force-light">#stayslight</span>
-          </div>
+        <div class="mx-4">
+          <h3>Designer</h3>
+          <p>
+            My background in graphic design gives me an appreciation for both 
+            accessibility and aesthetics. I strive to create components that 
+            are usable and reusable. Design is how it works!
+          </p>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg mb-4 bg-white dark:bg-zinc-700">
-          <img
-            class="w-full"
-            src="https://tailwindcss.com/img/card-top.jpg"
-            alt="Sunset in the mountains"
-          />
-          <div class="px-6 py-4 pb-2">
-            <div class="font-bold text-xl mb-2 dark:text-white">The Coldest Sunset</div>
-            <p class="text-zinc-700 dark:text-zinc-300">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-              quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-              nihil.
-            </p>
-          </div>
-          <div class="px-6 py-4">
-            <span class="badge mr-2">#photography</span>
-            <span class="badge mr-2">#travel</span>
-            <span class="badge">#winter</span>
-          </div>
-          <div class="px-6 py-4 dark-mode">
-            <span class="badge mr-2">#staysdark</span>
-            <span class="badge force-light">#stayslight</span>
-          </div>
+        <div class="mx-4">
+          <h3>Musician</h3>
+          <p>
+            When I'm not behind my laptop, you can often find me behind my 
+            four-string banjo, plunking out traditional jazz favorites 
+            written circa a century ago.
+          </p>
         </div>
-      </div>
+      </article>
     </Section>
   </main>
 </template>
