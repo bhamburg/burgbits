@@ -1,8 +1,12 @@
 import { parse } from 'node-html-parser'
 
+const appName = 'Goodreads'
 const goodreadsUrl = 'https://www.goodreads.com'
-const currentlyUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=currently-reading&sort=date_added&view=covers&per_page=20';
-const readUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=read&sort=date_read&view=covers&per_page=20';
+const profileUrl = goodreadsUrl + '/user/show/4284038-brian-hamburg'
+const currentlyUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=currently-reading&sort=date_added&view=covers';
+const readUrl = goodreadsUrl + '/review/list/4284038-brian-hamburg?shelf=read&sort=date_read&view=covers&per_page=100';
+const fetchedDate = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+const fetchedTime = new Date().toLocaleTimeString('en-us')
 
 const parseGoodreads = async (url: string) => {
   const data = await $fetch<string>(url)
@@ -11,12 +15,11 @@ const parseGoodreads = async (url: string) => {
   let items = new Array
   rows?.forEach((row) => {
     items.push({
+      author: row.querySelector('.field.author')?.getElementsByTagName('a')?.at(0)?.text,
+      coverSrc: row.getElementsByTagName('img')?.at(0)?.getAttribute('src'),
+      dateFinished: row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text,
       title: row.querySelector('.field.title')?.getElementsByTagName('a')?.at(0)?.getAttribute('title'),
-      authors: row.querySelector('.field.author')?.getElementsByTagName('a')?.at(0)?.text,
-      rating: row.querySelector('.field.rating .stars')?.getAttribute('data-rating'),
-      dateRead: row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text,
       url: goodreadsUrl + row.querySelector('.title')?.getElementsByTagName('a').at(0)?.getAttribute('href'),
-      coverSrc: row.getElementsByTagName('img')?.at(0)?.getAttribute('src')
     })
   })
   return {
@@ -27,7 +30,9 @@ const parseGoodreads = async (url: string) => {
 
 export default defineCachedEventHandler(async () => {
   return {
-    fetched: new Date(),
+    appName,
+    profileUrl,
+    fetched: `${fetchedDate} at ${fetchedTime}`,
     currently: await parseGoodreads(currentlyUrl),
     read: await parseGoodreads(readUrl),
   }

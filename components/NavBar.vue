@@ -32,18 +32,23 @@ const isOpen = ref(false);
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/now" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
-              Now
-            </NuxtLink>
-          </li>
-          <li>
             <NuxtLink to="/posts" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
               Blog
             </NuxtLink>
           </li>
           <li>
+            <NuxtLink to="/now" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
+              Now
+            </NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/shelves" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
               Shelves
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/uses" aria-current="page" class="block p-3 md:p-0 md:inline text-center rounded-full md:rounded-none">
+              Uses
             </NuxtLink>
           </li>
           <li class="hidden md:block">
@@ -65,10 +70,22 @@ const isOpen = ref(false);
 <style lang="postcss" scoped>
 a {
   &:hover {
-    @apply bg-slate-100 dark:bg-zinc-900 md:bg-transparent md:dark:bg-transparent md:border-b-2 md:border-emerald-500 md:dark:border-indigo-400;
+    @apply bg-slate-100 
+      dark:bg-zinc-900 
+      md:bg-transparent 
+      md:dark:bg-transparent 
+      md:border-b-2 
+      md:border-emerald-500 
+      md:dark:border-indigo-400;
   }
   &.router-link-active {
-    @apply text-white bg-emerald-500 dark:bg-indigo-400 md:bg-transparent md:dark:bg-transparent md:text-emerald-500 md:dark:text-indigo-400;
+    @apply text-white 
+      bg-emerald-500 
+      dark:bg-indigo-400 
+      md:bg-transparent 
+      md:dark:bg-transparent 
+      md:text-emerald-500 
+      md:dark:text-indigo-400;
   }
 }
 </style>

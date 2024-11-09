@@ -1,14 +1,12 @@
-## About Brian
-
-### Just who is this Hamburg character, anyway?
+## Who is Brian Hamburg?
 
 > Father of twins.  
-  Strummer of strings.  
-  Wrangler of the Web.  
-  Implementer of interfaces.  
+  Strummer of strings.
+  Wrangler of the Web.
+  Implementer of interfaces.
   Purveyor of pixels.
 
-![Hamburg Family](/_nuxt/assets/images/pluto-polynesian.jpg)
+![Hamburg Family](/assets/images/pluto-polynesian.jpg)
 *The Hamburgs in Walt Disney World*
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.
@@ -40,17 +38,17 @@ Led front-end software quality initiatives and drove major feature releases. Bui
 #### American Red Cross
 ##### Full-Stack Developer
 **February 2021 – February 2022**  
-Created and maintained features for [redcross.org](https://redcross.org) and [redcrossblood.org](https://redcrossblood.org) within the enterprise web content management system (AEM) and contributed to associated APIs. Implemented new automated testing with JUnit, Jasmine, and Cypress.
+Created and maintained features for [redcross.org](https://redcross.org){:target="_blank"} and [redcrossblood.org](https://redcrossblood.org){:target="_blank"} within the enterprise web content management system (AEM) and contributed to associated APIs. Implemented new automated testing with JUnit, Jasmine, and Cypress.
 
 #### Thomas Jefferson University and Jefferson Health
 ##### Web Developer
 **September 2012 – February 2021**  
-Created and maintained features for [Jefferson.edu](https://jefferson.edu) and [jeffersonhealth.org](https://jeffersonhealth.org) within the enterprise web content management system (AEM), utilizing server-side JavaScript, and Java. Contributed to the development of other front-end web applications as needed, utilizing vanilla JS and React, Sass/CSS, and HTML.
+Created and maintained features for [Jefferson.edu](https://jefferson.edu){:target="_blank"} and [jeffersonhealth.org](https://jeffersonhealth.org){:target="_blank"} within the enterprise web content management system (AEM), utilizing server-side JavaScript, and Java. Contributed to the development of other front-end web applications as needed, utilizing vanilla JS and React, Sass/CSS, and HTML.
 
 #### Law School Admission Council
 ##### Web Services Specialist
 **September 2008 – September 2012**  
-Created and maintained features for [LSAC.org](https://lsac.org), leading an initiative to make web content adhere to WC3 accessibility guidelines. Converted the intranet portal from a static web site to a Microsoft SharePoint site.
+Created and maintained features for [LSAC.org](https://lsac.org){:target="_blank"}, leading an initiative to make web content adhere to WC3 accessibility guidelines. Converted the intranet portal from a static web site to a Microsoft SharePoint site.
 ##### Information Systems Specialist
 **September 2006 – September 2008**  
 Provided technical support to internal employees and external customers, diagnosing and documenting technical issues pertaining to the company’s web site, in-house software, and licensed software. Trained and assisted co-workers to support Macintosh users. Provided quality assurance testing for online law school applications and contributed to documentation for law school application creation and QA processes.
@@ -72,7 +70,7 @@ Graduated 2006
 ### Certifications
 #### AWS Cloud Practitioner
 **Amazon Web Services (AWS)**  
-[Issued June 2021](https://www.credly.com/badges/2edb90a0-68d8-4928-8df7-fb86dedc227f)
+[Issued June 2021](https://www.credly.com/badges/2edb90a0-68d8-4928-8df7-fb86dedc227f){:target="_blank"}
 
 ## Music
 
@@ -84,15 +82,15 @@ When I'm not behind my laptop, you can often find me behind my four-string, plec
   <iframe src="https://www.youtube.com/embed/B62Kw4nDD88?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-I've been a member of the world-renowned [Fralinger String Band](https://www.fralinger.org) for over 20 years, a perennial favorite in the New Year's Day [Mummers Parade](https://www.fralinger.org/mummers-history). Fralinger has traveled literally around the world with performances that have taken us to Mardi Gras in New Orleans, and as far as Hong Kong for the Chinese New Year celebration. I've also been fortunate to have the chance to play with some great traditional jazz musicians as part of small hot jazz and Dixieland ensembles in the Philadelphia area.
+I've been a member of the world-renowned [Fralinger String Band](https://www.fralinger.org){:target="_blank"} for over 20 years, a perennial favorite in the New Year's Day [Mummers Parade](https://www.fralinger.org/mummers-history){:target="_blank"}. Fralinger has traveled literally around the world with performances that have taken us to Mardi Gras in New Orleans, and as far as Hong Kong for the Chinese New Year celebration. I've also been fortunate to have the chance to play with some great traditional jazz musicians as part of small hot jazz and Dixieland ensembles in the Philadelphia area.
 
 ## Other Hobbies
 
-Besides keeping this site up-to-date using the latest tech, I also helped build the [String Band Database](http://stringbanddatabase.com), which is a searchable listing of string band themes from the Mummers Parade with videos and parade data. It was a good exercise in using a Google Sheet as a RESTful backend.
+Besides keeping this site up-to-date using the latest tech, I also helped build the [String Band Database](http://stringbanddatabase.com){:target="_blank"}, which is a searchable listing of string band themes from the Mummers Parade with videos and parade data. It was a good exercise in using a Google Sheet as a RESTful backend.
 
 I'm always trying to read more. Mostly sci-fi, pop-sci, philosophy, and self-help books, but I'm open to anything. It's hard to find the time, but I've been doing a pretty good job of keeping up with my reading list. Ryan Holiday and Robert Greene are two of my more recent favorite authors.
 
-I like to think playing Super Mario Bros. and arcade games in the late 80s, and tinkering with DOS and Windows 95 to get multiplayer Doom going, is what initially drove my interest in technology, and specifically interactive digital experiences. My tastes gravitate towards games from and inspired by that 8- and 16-bit age of pixel art. Also, the heavily-syncopated, early-jazz-inspired soundtracks of the games from the NES/SNES era definitely affected my musical taste in a positive way. I love cathode-ray tube scan lines in 240p RGB, and keeping up with the latest advances in FPGA-based systems with near-perfect accuracy and zero-to-low input latency, particularly the [MiSTer FPGA](https://github.com/MiSTer-devel/Wiki_MiSTer/wiki) hardware emulation project and the [RetroTINK](https://www.retrotink.com/product-page/5x-pro) line of analog-to-digital video upscalers. I've also more recently become a huge fan of the [*Soulsborne*](https://en.wikipedia.org/wiki/Souls_(series)) games by FromSoftware, mostly playing them on PlayStation 5.
+I like to think playing Super Mario Bros. and arcade games in the late 80s, and tinkering with DOS and Windows 95 to get multiplayer Doom going, is what initially drove my interest in technology, and specifically interactive digital experiences. My tastes gravitate towards games from and inspired by that 8- and 16-bit age of pixel art. Also, the heavily-syncopated, early-jazz-inspired soundtracks of the games from the NES/SNES era definitely affected my musical taste in a positive way. I love cathode-ray tube scan lines in 240p RGB, and keeping up with the latest advances in FPGA-based systems with near-perfect accuracy and zero-to-low input latency, particularly the [MiSTer FPGA](https://github.com/MiSTer-devel/Wiki_MiSTer/wiki){:target="_blank"} hardware emulation project and the [RetroTINK](https://www.retrotink.com/product-page/5x-pro){:target="_blank"} line of analog-to-digital video upscalers. I've also more recently become a huge fan of the [*Soulsborne*](https://en.wikipedia.org/wiki/Souls_(series)){:target="_blank"} games by FromSoftware, mostly playing them on PlayStation 5.
 
 ![Zelda on PVM via MiSTer FPGA](/_nuxt/assets/images/mister-zelda.jpeg)
 *The Legend of Zelda on my PVM via MiSTer FPGA*

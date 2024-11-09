@@ -31,6 +31,7 @@
 <style lang="postcss">
   .jumbotron h1, 
   .jumbotron h2 {
-    @apply font-black text-4xl md:text-5xl;
+    @apply font-black text-4xl md:text-5xl m-0;
   }
+  
 </style>

@@ -1,6 +1,10 @@
+const appName = 'Grouvee'
 const grouveeUrl = 'https://www.grouvee.com'
-const finishedApi = grouveeUrl + '/api/shelves/build_shelf_page/148221/?search=&o=-latest_finish'
+const profileUrl = grouveeUrl + '/user/21384-burgbits/shelves/'
+const finishedApi = grouveeUrl + '/api/shelves/build_shelf_page/148221/?o=-latest_finish'
 const playingApi = grouveeUrl + '/api/shelves/build_shelf_page/113530'
+const fetchedDate = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+const fetchedTime = new Date().toLocaleTimeString('en-us')
 
 const parseGrouvee = async (api: string) => {
   const data: any = await $fetch<any>(api)
@@ -9,17 +13,17 @@ const parseGrouvee = async (api: string) => {
   let items = new Array
   games?.forEach((game: any) => {
     items.push({
-      artSrc: grouveeUrl + game?.game?.thumbnail_147_220,
+      coverSrc: game?.game?.thumbnail_147_220,
       dateFinished: getLatestPlaythrough(game?.dates),
-      name: game?.game?.name,
       platforms: game?.metadata?.platforms?.map((platform: any) => platform.name),
       rating: game?.review?.rating,
+      title: game?.game?.name,
       url: grouveeUrl + game?.game?.url,
     })
   })
   return {
     fetchedFrom: api,
-    url: shelfUrl,
+    url: grouveeUrl + shelfUrl + '?o=-latest_finish',
     items,
   }
 }
@@ -32,7 +36,9 @@ const getLatestPlaythrough = (datesArray: any[]) => {
 
 export default defineCachedEventHandler(async () => {
   return {
-    fetched: new Date(),
+    appName,
+    profileUrl,
+    fetched: `${fetchedDate} at ${fetchedTime}`,
     playing: await parseGrouvee(playingApi),
     finished: await parseGrouvee(finishedApi),
   }

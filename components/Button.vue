@@ -6,7 +6,8 @@
     type="button" 
     class="
       inline-block
-      bg-transparent 
+      bg-transparent
+      no-underline 
       text-emerald-500
       hover:text-white 
       dark:text-white

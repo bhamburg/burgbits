@@ -12,11 +12,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-  ],
+  modules: ['nuxt-anchorscroll', '@nuxt/content', '@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@nuxt/image'],
   postcss: {
     plugins: {
       'postcss-custom-media': {},
