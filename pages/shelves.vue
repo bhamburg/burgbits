@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: 'Shelves'
+})
+</script>
+
 <template>
   <Jumbotron>
     <h1>Shelves</h1>
