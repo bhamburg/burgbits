@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - BurgBits` : 'BurgBits';
@@ -17,23 +18,29 @@ useHead({
 </template>
 
 <style lang="postcss">
+html {
+  @apply scroll-smooth;
+}
 section {
   article {
     @apply mx-4;
+    p:first-child {
+      @apply md:mt-10
+    }
   }
   h2 {
-    @apply font-black text-3xl md:text-4xl mb-6 mt-10;
+    @apply font-black text-3xl md:text-4xl mb-6 md:mt-10 scroll-mt-20;
   }
   h3 {
-    @apply font-black text-2xl;
+    @apply font-black text-2xl scroll-mt-20;
   }
   h4 {
-    @apply font-black text-xl
+    @apply font-black text-xl scroll-mt-20;
   }
   h5, h6 {
-    @apply font-black
+    @apply font-black scroll-mt-20;
   }
-  h3, p, ul, blockquote  {
+  h3, p, ul, blockquote, pre  {
     @apply mb-6;
   }
   a {
@@ -44,7 +51,13 @@ section {
       underline;
   }
   blockquote {
-    @apply flex flex-col p-6 text-center md:text-xl rounded
+    @apply flex 
+      flex-col 
+      p-6 
+      text-center 
+      md:text-xl 
+      rounded
+      font-mono
       bg-gradient-to-l
       text-black 
       dark:text-white 
@@ -52,7 +65,7 @@ section {
       to-emerald-100 
       dark:from-indigo-950 
       dark:to-black;
-      p {
+      p, p:first-child {
         @apply m-0;
       }
   }
@@ -69,6 +82,12 @@ section {
     a {
       @apply text-inherit hover:text-inherit no-underline;
     }
+  }
+  img {
+    @apply rounded w-full;
+  }
+  pre {
+    @apply bg-black text-white p-4 rounded overflow-auto;
   }
   .video-container {
     @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden;

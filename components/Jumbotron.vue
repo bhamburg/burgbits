@@ -7,7 +7,7 @@
       dark:from-indigo-900 
       dark:to-black 
       relative 
-      md:pt-[67px] 
+      pt-[67px] 
       shadow-inner 
       transition 
       duration-500

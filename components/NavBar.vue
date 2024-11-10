@@ -5,7 +5,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <nav class="w-full md:fixed md:top-0 z-10 bg-white/95 dark:bg-zinc-800/95 shadow-xl transition">
+  <nav class="w-full fixed top-0 z-10 bg-white/95 dark:bg-zinc-800/95 shadow-xl transition">
     <div class="flex flex-wrap font-mono items-center justify-between mx-auto p-4">
       <a href="/" id="brand" class="flex items-center space-x-3 rtl:space-x-reverse dark:text-white !bg-transparent border-none">
         <svg version="1.1" alt="burgbits Logo" class="h-[35px] fill-black dark:fill-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 155 155" xml:space="preserve">

@@ -17,15 +17,9 @@ const { data } = await useFetch<any>(props.api)
           + (item.platforms ? item.platforms.at(-1) : '')
         " 
         :to="item.url"
-        class="mx-3 mb-10 
+        class="mx-3 
+          mb-10 
           drop-shadow-lg 
-          bg-gradient-to-l
-          hover:bg-gradient-to-r
-          text-white 
-          from-sky-500 
-          to-emerald-400 
-          dark:from-indigo-900 
-          dark:to-black 
           hover:drop-shadow-xl  
           transition"
         target="_blank"

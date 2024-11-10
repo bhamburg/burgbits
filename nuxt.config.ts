@@ -13,12 +13,12 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    'nuxt-anchorscroll', 
-    'nuxt-content-assets', 
-    '@nuxt/content', 
-    '@nuxtjs/color-mode', 
-    '@nuxtjs/tailwindcss', 
-    '@nuxt/image'
+    '@nuxt/content',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    'nuxt-content-assets',
+    'nuxt-gtag',
   ],
   postcss: {
     plugins: {
@@ -27,5 +27,8 @@ export default defineNuxtConfig({
       'postcss-simple-vars': {},
     }
   },
-  compatibilityDate: '2024-10-24'
+  compatibilityDate: '2024-10-24',
+  gtag: {
+    id: 'G-30HMKNVJE0',
+  }
 })

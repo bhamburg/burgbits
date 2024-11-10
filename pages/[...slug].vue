@@ -5,17 +5,17 @@
         <h1>{{ doc.title }}</h1>
       </Jumbotron>
       <Section>
-        <div class="flex flex-col md:flex-row-reverse">
-          <div class="flex flex-col toc md:w-[20%] mt-10 mx-4 md:ml-8">
+        <div class="flex flex-col lg:flex-row-reverse">
+          <div class="lg:fixed flex flex-col toc lg:w-40 mt-8 lg:mt-14 mx-4 lg:ml-8 z-1">
             <h4>On This Page</h4>
             <ul>
               <li v-for="link of doc?.body?.toc?.links" :key="link.id">
-                <a :href="`#${link.id}`" class="text-lg">{{ link.text }}</a>
+                <NuxtLink :to="`#${link.id}`" class="text-lg">{{ link.text }}</NuxtLink>
               </li>
             </ul>
           </div>
         
-          <article class="md:w-[75%] pt-4">
+          <article class="lg:w-[75%] lg:mr-auto mt-4">
             <ContentRenderer :value="doc" />
           </article>
         </div>
@@ -26,9 +26,11 @@
         <h1>404 Error</h1>
       </Jumbotron>
       <Section class="text-center">
-        <h2>Page Not Found</h2>
-        <p>These aren&rsquo;t the bits you're looking for.</p>
-        <Button to="/" class="solid mt-10">Go to Home</Button>
+        <article class="pt-4">
+          <h2>Page Not Found</h2>
+          <p>These aren&rsquo;t the bits you're looking for.</p>
+          <Button to="/" class="solid mt-10">Go to Home</Button>
+        </article>
       </Section>
     </template>
   </ContentDoc>

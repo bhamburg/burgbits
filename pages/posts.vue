@@ -3,15 +3,10 @@
     <h1>Blog Posts</h1>
   </Jumbotron>
   <Section>
-    <template>
-      <main>
-        <ContentList path="../content/posts" v-slot="{ list }">
-          <div v-for="article in list" :key="article._path">
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.description }}</p>
-          </div>
-        </ContentList>
-      </main>
-    </template>
+    <article class="text-center pt4">
+      <h2>Under Construction</h2>
+      <p>🚧 Come back soon! 🚧</p>
+      <Button to="/" class="solid mt-10">Go to Home</Button>
+    </article>
   </Section>
 </template>
