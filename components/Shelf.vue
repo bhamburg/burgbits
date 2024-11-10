@@ -24,7 +24,7 @@ const { data } = await useFetch<any>(props.api)
           transition"
         target="_blank"
       >
-        <NuxtImg 
+        <img
           :alt="item.title" 
           :src="item.coverSrc" 
           class="w-24 rounded"
