@@ -1,8 +1,6 @@
 import { parse } from 'node-html-parser'
 
 const appName = 'Goodreads'
-const fetchedDate = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
-const fetchedTime = new Date().toLocaleTimeString('en-us')
 const goodreadsUrl = 'https://www.goodreads.com'
 const profileUrl = goodreadsUrl + '/user/show/4284038-brian-hamburg'
 
@@ -30,7 +28,7 @@ export default defineCachedEventHandler(async () => {
   return {
     appName,
     profileUrl,
-    fetched: `${fetchedDate} at ${fetchedTime}`,
+    fetched: new Date(),
     shelves: [
       { 
         title: 'Currently Reading',

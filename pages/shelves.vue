@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Shelves'
+  title: 'Shelves - BurgBits'
 })
 </script>
 

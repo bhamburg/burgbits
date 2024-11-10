@@ -5,7 +5,7 @@ const { data } = await useFetch<any>(props.api)
 </script>
 
 <template>
-  <div v-for="shelf in data.shelves">
+  <ClientOnly v-for="shelf in data.shelves">
     <h3 class="text-center md:text-left">{{ shelf.title }}</h3>
     <div class="flex flex-row flex-wrap items-end justify-center md:justify-start">
       <NuxtLink v-for="item in shelf.items.slice(0, 17)" 
@@ -47,9 +47,15 @@ const { data } = await useFetch<any>(props.api)
         View all
       </NuxtLink>
     </div>
-  </div>
+  </ClientOnly>
   <p>
     <span>Powered by <NuxtLink :to="data.profileUrl">{{ data.appName }}</NuxtLink>.</span><br />
-    <span v-if="data.fetched" class="mt-0">Last fetched: {{ data.fetched }}</span>
+    <ClientOnly v-if="data.fetched" class="mt-0">
+      Last fetched: 
+      {{ new Date(data.fetched).toLocaleDateString('en-us', { 
+        weekday:"long", year:"numeric", month:"short", day:"numeric"
+      }) }}
+      at {{ new Date(data.fetched).toLocaleTimeString('en-us') }}
+    </ClientOnly>
   </p>
 </template>

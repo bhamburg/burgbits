@@ -1,10 +1,9 @@
 const appName = 'Grouvee'
 const grouveeUrl = 'https://www.grouvee.com'
 const profileUrl = grouveeUrl + '/user/21384-burgbits/shelves/'
+
 const finishedApi = grouveeUrl + '/api/shelves/build_shelf_page/148221/?o=-latest_finish'
 const playingApi = grouveeUrl + '/api/shelves/build_shelf_page/113530'
-const fetchedDate = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
-const fetchedTime = new Date().toLocaleTimeString('en-us')
 
 const parseGrouvee = async (api: string) => {
   const data: any = await $fetch<any>(api)
@@ -34,7 +33,7 @@ export default defineCachedEventHandler(async () => {
   return {
     appName,
     profileUrl,
-    fetched: `${fetchedDate} at ${fetchedTime}`,
+    fetched: new Date(),
     shelves: [
       { 
         title: 'Currently Playing',
