@@ -7,7 +7,7 @@
       <Section>
         <div class="flex flex-col lg:flex-row-reverse">
           <div class="lg:fixed flex flex-col toc lg:w-40 mt-8 lg:mt-14 mx-4 lg:ml-8 z-1">
-            <h4>On This Page</h4>
+            <h2 class="my-0 text-xl">On This Page</h2>
             <ul>
               <li v-for="link of doc?.body?.toc?.links" :key="link.id">
                 <NuxtLink :to="`#${link.id}`" class="text-lg">{{ link.text }}</NuxtLink>

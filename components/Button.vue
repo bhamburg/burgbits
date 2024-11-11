@@ -26,7 +26,7 @@
 
 <style lang="postcss" scoped>
   .solid {
-    @apply text-white !outline-none bg-emerald-800  hover:bg-emerald-700 dark:bg-indigo-400 dark:hover:bg-indigo-500 py-3 px-5
+    @apply text-white !outline-none bg-emerald-800  hover:bg-emerald-500 dark:bg-indigo-400 dark:hover:bg-indigo-500 py-3 px-5
   }
   .jumbotron a {
     @apply text-white outline-white hover:text-emerald-400 hover:bg-white dark:hover:text-indigo-900

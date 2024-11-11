@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: 'utf-8',
+      htmlAttrs: {
+        lang: 'en'
+      },
       viewport: 'width=device-width, initial-scale=1',
       meta: [
         { name: 'description', content: 'Software Engineer, Designer, and Musician' }
