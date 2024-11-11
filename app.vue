@@ -43,8 +43,8 @@ section {
     @apply mb-6;
   }
   a {
-    @apply text-emerald-500
-      hover:text-emerald-600 
+    @apply text-emerald-800
+      hover:text-emerald-700 
       dark:text-indigo-400
       dark:hover:text-indigo-500
       underline;
