@@ -16,6 +16,12 @@
           </div>
         
           <article class="lg:w-[75%] lg:mr-auto mt-4">
+            <img v-if="doc.featuredImage" class="lg:mt-10 mb-4" :src="doc.featuredImage"></img>
+            <p v-if="doc.date" class="lg:mt-10">
+              Posted: {{ new Date(doc.date).toLocaleDateString('en-us', { 
+                weekday:"long", year:"numeric", month:"short", day:"numeric"
+              }) }}
+            </p>
             <ContentRenderer :value="doc" />
           </article>
         </div>

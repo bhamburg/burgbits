@@ -1,4 +1,4 @@
-Last updated in November 2024.  
+Last updated: November 2024  
 [What is a /now page?](https://nownownow.com/about){:target="_blank"}
 
 ## Family
