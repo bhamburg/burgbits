@@ -1,6 +1,6 @@
 # BurgBits
 
-![homepage banner](assets/images/home.png)
+![homepage banner](public/images/home.png)
 
 Hi there! 👋 
 
