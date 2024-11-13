@@ -36,7 +36,7 @@ const { data } = await useFetch<any>(props.api)
           hover:bg-gradient-to-r
           text-white 
           hover:text-white
-          from-sky-500 
+          from-sky-600 
           to-emerald-400 
           dark:from-indigo-900 
           dark:to-black   

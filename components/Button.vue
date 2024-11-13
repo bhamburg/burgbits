@@ -5,14 +5,14 @@
       inline-block
       bg-transparent
       no-underline 
-      text-emerald-800
+      text-sky-800
       hover:text-white 
       dark:text-white
-      hover:bg-emerald-800
-      dark:hover:bg-indigo-400
+      hover:bg-sky-800
+      dark:hover:bg-indigo-300
       outline 
-      outline-emerald-800 
-      dark:outline-indigo-400 
+      outline-sky-800 
+      dark:outline-indigo-300 
       mt-4
       mx-2
       py-2 
@@ -26,12 +26,12 @@
 
 <style lang="postcss" scoped>
   .solid {
-    @apply text-white !outline-none bg-emerald-800  hover:bg-emerald-500 dark:bg-indigo-400 dark:hover:bg-indigo-500 py-3 px-5
+    @apply text-white !outline-none bg-sky-600  hover:bg-sky-500 dark:bg-indigo-300 dark:hover:bg-indigo-500 py-3 px-5
   }
   .jumbotron a {
-    @apply text-white outline-white hover:text-emerald-400 hover:bg-white dark:hover:text-indigo-900
+    @apply text-white outline-white hover:text-sky-800 hover:bg-white dark:hover:text-indigo-900
   }
   .jumbotron a.solid {
-    @apply text-emerald-800 dark:text-indigo-900 !outline-none bg-white hover:bg-gray-200 py-3 px-5
+    @apply text-sky-800 dark:text-indigo-900 !outline-none bg-white hover:bg-gray-200 py-3 px-5
   }
 </style>

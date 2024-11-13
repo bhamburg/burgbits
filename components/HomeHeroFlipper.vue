@@ -1,28 +1,30 @@
 <template>
-  <ClientOnly>
-    <div 
-      v-on:click="flip"
-      :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', {active: flipped}]"
-      title="Click me!"
-    >
-      <div class="flip-card-inner">
-        <a class="flip-card-front">
+  <div 
+    v-on:click="flip"
+    :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', {active: flipped}]"
+    title="Click me!"
+  >
+    <div class="flip-card-inner">
+      <div class="flip-card-front rounded-full w-full bg-white border-8 border-white">
+        <ClientOnly>
           <img
-            class="rounded-full w-full border-8 border-white"
+            class="rounded-full w-full"
             src="/images/brian-hamburg-profile-photo-DICE2019.jpeg" 
             alt="Brian Hamburg"
           />
-        </a>
-        <a class="flip-card-back">
+        </ClientOnly>
+      </div>
+      <div class="flip-card-back rounded-full w-full bg-white border-8 border-white">
+        <ClientOnly>
           <img 
-            class="rounded-full w-full border-8 border-white"
+            class="rounded-full w-full"
             :src="photos[photoIndex].src" 
             :alt="photos[photoIndex].alt"
           />
-        </a>
+        </ClientOnly>
       </div>
     </div>
-  </ClientOnly>
+  </div>
 </template>
 
 <style>

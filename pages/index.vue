@@ -4,7 +4,7 @@
       <div class="md:mx-5 p-4">
         <h2>Hi, I&rsquo;m Brian.</h2>
         <p class="md:text-2xl pt-5">I&rsquo;m a 
-          <span class="font-mono bg-sky-400 dark:bg-indigo-900 rounded px-1">software engineer</span>,<br /> 
+          <span class="font-mono bg-black bg-opacity-10 dark:bg-opacity-100 rounded px-1">software engineer</span>,<br /> 
           a <strong><em>designer</em></strong>,<br />
           and a <em class="font-serif">musician</em>.
         </p>

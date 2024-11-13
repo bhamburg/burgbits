@@ -43,9 +43,9 @@ section {
     @apply mb-6;
   }
   a {
-    @apply text-emerald-800
-      hover:text-emerald-500 
-      dark:text-indigo-400
+    @apply text-sky-800
+      hover:text-sky-600 
+      dark:text-indigo-300
       dark:hover:text-indigo-500
       underline;
   }
