@@ -34,7 +34,7 @@ Last updated: November 2024
 ### Mobile Devices
 - [iPhone 14 Pro](https://en.wikipedia.org/wiki/IPhone_14_Pro){:target="_blank"}
 - [iPad Air (4th Generation)](https://en.wikipedia.org/wiki/IPad_Air_(4th_generation)){:target="_blank"}
-- [Apple Watch Ultra 2](https://en.wikipedia.org/wiki/Apple_Watch){:target="_blank"}
+- [GoPro HERO13 Black](https://gopro.com/en/us/shop/cameras/buy/hero13black/CHDHX-131-master.html){:target="_blank"}
 
 ## Software
 ### Local Environment
