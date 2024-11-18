@@ -14,7 +14,7 @@ const { data } = await useFetch<any>(props.api)
           item.title  
           + (item.author ? ` - ${item.author}` : '') 
           + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')
-          + (item.firstTime ? ' - First Time' : '')
+          + (item.firstTime ? ' - First Playthrough' : '')
           + (item.completionLevel === 'A' ? ' - 100%' : '')
         " 
         :to="item.url"
@@ -55,7 +55,9 @@ const { data } = await useFetch<any>(props.api)
     </div>
   </ClientOnly>
   <p>
-    <span>Powered by <NuxtLink :to="data.profileUrl">{{ data.appName }}</NuxtLink>.</span><br />
+    <span v-if="data?.shelves?.at(-1)?.items?.find((item: any) => item.firstTime)">First Playthrough: ✅</span><br />
+    <span v-if="data?.shelves?.at(-1)?.items?.find((item: any) => item.completionLevel === 'M')">100% Completion: 💯</span><br />
+    <span>Powered by <NuxtLink :to="data.profileUrl">{{ data.appName }}</NuxtLink></span><br />
     <ClientOnly v-if="data.fetched" class="mt-0">
       Last fetched: 
       {{ new Date(data.fetched).toLocaleDateString('en-us', { 
