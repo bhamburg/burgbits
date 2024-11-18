@@ -3,7 +3,9 @@ const grouveeUrl = 'https://www.grouvee.com'
 const profileUrl = grouveeUrl + '/user/21384-burgbits/shelves/'
 
 const finishedApi = grouveeUrl + '/api/shelves/build_shelf_page/148221/?o=-latest_finish'
+const finishedUrl = grouveeUrl + '/user/21384-burgbits/shelves/148221-finished/?o=-latest_finish'
 const playingApi = grouveeUrl + '/api/shelves/build_shelf_page/113530'
+const playingUrl = grouveeUrl + '/user/21384-burgbits/shelves/113530-playing/'
 
 const parseGrouvee = async (api: string) => {
   const data: any = await $fetch<any>(api)
@@ -38,12 +40,12 @@ export default defineCachedEventHandler(async () => {
     shelves: [
       { 
         title: 'Currently Playing',
-        fetchedFrom: playingApi,
+        fetchedFrom: playingUrl,
         items: await parseGrouvee(playingApi),
       },
       { 
         title: 'Recently Finished',
-        fetchedFrom: finishedApi,
+        fetchedFrom: finishedUrl,
         items: await parseGrouvee(finishedApi),
       }
     ],
