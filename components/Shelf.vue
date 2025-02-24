@@ -7,7 +7,7 @@ const { data } = await useFetch<any>(props.api)
 <template>
   <ClientOnly v-for="shelf in data.shelves">
     <h3 class="text-center md:text-left">{{ shelf.title }}</h3>
-    <div class="flex flex-row flex-wrap items-end justify-center md:justify-start">
+    <div class="flex flex-row flex-wrap items-end justify-center md:justify-start no-underline">
       <NuxtLink v-for="item in shelf.items.slice(0, 17)" 
         :key="item.title"
         :title="
@@ -22,28 +22,27 @@ const { data } = await useFetch<any>(props.api)
           mb-10 
           drop-shadow-lg 
           hover:drop-shadow-xl  
-          rounded
-          relative"
+          relative
+          no-underline"
         target="_blank"
       >
         <img
           :alt="item.title" 
           :src="item.coverSrc" 
-          class="w-24 rounded"
+          class="w-24 rounded-none"
         />
-        <div 
-          :class="item.completionLevel === 'A' || item.firstTime ? 'bg-gradient-to-t from-white to-50% opacity-70' : ''" 
-          class="absolute w-full h-full top-0 rounded" 
-        />
-        <div v-if="item.firstTime" class="absolute right-1 bottom-1">
-          🆕
+        <div v-if="item.completionLevel === 'A'" class="bg-emerald-500 text-white text-[0.5rem] text-center font-mono -mt-2 z-20">
+          100% Completed
         </div>
-        <div v-if="item.completionLevel === 'A'" class="absolute left-1 bottom-1">
-          💯
+        <div v-if="item.firstTime" class="bg-sky-600 text-white text-[0.5rem] text-center font-mono">
+          First Time
+        </div>
+        <div class="bg-black text-white text-[0.5rem] text-center font-mono">
+          {{ item.dateFinished }}
         </div>
       </NuxtLink>
       <NuxtLink v-if="shelf.items.length > 6" :to="shelf.fetchedFrom" target="_blank"
-        class="flex items-center text-center font-bold capitalize justify-center h-36 w-24 mx-3 mb-10 rounded
+        class="flex items-center text-center font-bold capitalize justify-center h-40 w-24 mx-3 mb-10
           bg-gradient-to-l
           hover:bg-gradient-to-r
           text-white 
@@ -61,12 +60,6 @@ const { data } = await useFetch<any>(props.api)
     </div>
   </ClientOnly>
   <p>
-    <span v-if="data?.shelves?.at(-1)?.items?.find((item: any) => item.completionLevel === 'M')">
-      100% Completion: 💯
-    </span><br />
-    <span v-if="data?.shelves?.at(-1)?.items?.find((item: any) => item.firstTime)">
-      First Playthrough: 🆕
-    </span><br />
     <span>Powered by <NuxtLink :to="data.profileUrl">{{ data.appName }}</NuxtLink></span><br />
     <ClientOnly v-if="data.fetched" class="mt-0">
       Last fetched: 
