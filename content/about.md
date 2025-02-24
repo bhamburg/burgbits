@@ -1,21 +1,19 @@
 ## About Brian Hamburg
 
-> Father of twins.  
-  Strummer of strings.  
-  Wrangler of the Web.  
-  Implementer of interfaces.  
-  Purveyor of pixels.&nbsp;
-
 ![Hamburg Family](/images/pluto-polynesian.jpg)
-*The Hamburgs in Walt Disney World*
+*The Hamburgs in Walt Disney World in 2018*
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.
 
 Ultimately I'm just trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.
 
-## Résumé
+> Father of Twins  
+  Strummer of Strings  
+  Wrangler of the Web  
+  Implementer of Interfaces  
+  Purveyor of Pixels&nbsp;
 
-[Download PDF](/Brian-Hamburg-resume.pdf){:target="_blank"} :inbox_tray:
+## Résumé
 
 ### Summary
 
@@ -25,13 +23,17 @@ Key technologies used include vanilla JS, Vue, Angular, React, jQuery, Sass/CSS,
 
 ### Professional Experience
 
+#### The Walt Disney Company
+##### Senior Software Engineer
+**February 2025 – Present**  
+
 #### Oncourse Home Solutions
 ##### Senior Software Engineer
-**July 2023 – Present**  
+**July 2023 – February 2025**  
 Leading UI development of internal and external-facing web software initiatives. Utilizing headless CMS solutions with React (Gatsby and Next.js) for a nationwide home warranty e-commerce platform, creating front-end wireframes/mockups with Figma, and contributing to back-end design and implementation.
 
 #### The Walt Disney Company
-##### Senior Software Engineer – Front End
+##### Senior Software Engineer
 **February 2022 – July 2023**  
 Led front-end software quality initiatives and drove major feature releases. Built and maintained user interfaces with Vue.js for software that controls the content delivery ecosystem for properties including Disney+, ESPN+, and Star+. Implemented new automated testing with Vitest, Vue Test Utils, and Cypress.
 

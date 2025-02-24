@@ -1,4 +1,4 @@
-Last updated: November 2024  
+Last updated: February 2025  
 [What is a /uses page?](https://github.com/wesbos/awesome-uses/){:target="_blank"}
 
 ## Hardware
@@ -38,23 +38,17 @@ Last updated: November 2024
 
 ## Software
 ### Local Environment
-- Code editor: [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}
-  - Font: MesloLGS NF
-  - Theme: GitHub Dark Default
-- Terminals: [iTerm2](https://iterm2.com/){:target="_blank"} (Mac), [Windows Terminal](https://aka.ms/terminal){:target="_blank"} (PC)
-  - Font: MesloLGS NF
-  - Shell: Oh My Zsh (powerlevel10k, shell completion)
+- [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}
+- [Oh My Zsh](https://ohmyz.sh/) (powerlevel10k, shell completion)
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/){:target="_blank"}
 - [Git](https://git-scm.com/){:target="_blank"}
 - [Node.js](https://nodejs.org/){:target="_blank"}
 - [NPM](https://www.npmjs.com/){:target="_blank"}
-- [Docker](https://www.docker.com){:target="_blank"}
-- [Homebrew](https://brew.sh/){:target="_blank"} (Mac)
+- [Docker Desktop](https://www.docker.com){:target="_blank"}
 
 ### Creative Tools
-- [Affinity Designer 2](https://affinity.serif.com/en-us/designer/){:target="_blank"}
-- [Affinity Photo 2](https://affinity.serif.com/en-us/photo/){:target="_blank"}
-- [Affinity Publisher 2](https://affinity.serif.com/en-us/publisher/){:target="_blank"}
+- [Adobe Creative Suite](https://www.adobe.com/creativecloud.html){:target="_blank"} 
+- [Affinity](https://affinity.serif.com){:target="_blank"} (Designer, Photo, Publisher)
 - [Figma](https://www.figma.com){:target="_blank"}
 - [GarageBand](https://www.apple.com/mac/garageband/){:target="_blank"}
 - [MuseScore](https://musescore.org/){:target="_blank"}

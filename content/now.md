@@ -1,16 +1,19 @@
-Last updated: November 2024  
+Last updated: February 2025  
 [What is a /now page?](https://nownownow.com/about){:target="_blank"}
+
+![dog and banjo](/images/ludwig-banjo.jpg)
+*Ludwig and my 1969 Vegavox IV*
 
 ## Family
 
-My wife Andrea and I reside in Northeast Philly with our twin girls, Elizabeth and Louise. We have a 3-year-old labraheeler named Ludwig. The girls are doing great in 3rd grade and keeping busy with activities like drama club, singing lessons, and dance. We have no intentions of leaving the area because of the need to stay close to extended family and a tight-knit community of friends here in the Philadelphia area. Go Birds! 🦅
+My wife Andrea and I reside in Northeast Philly with our twin girls, Elizabeth and Louise. We have a 3-year-old labraheeler named Ludwig. The girls are really enjoying 3rd grade and keeping busy with activities like drama club, singing lessons, and dance. We have no intentions of leaving the area because of the need to stay close to extended family and a tight-knit community of friends here in the Greater Philadelphia region.
 
 ## Work
 
-Currently, I'm a senior software engineer for [Oncourse Home Solutions](https://www.oncoursehome.com){:target="_blank"} and I commute to the Mount Laurel, NJ office in a hybrid work arrangement. I'm constanly working to keep my tech skills sharp but most recently have been working to be a subject matter expert on frameworks like Next.js (React), and Nuxt.js (Vue), the latter of which I've very recently rebuilt this site to use.
+Currently, I'm a senior software engineer for The Walt Disney Company, working out of the New York City office. My team is responsible for providing the control plane software that our media distribution engineers use to configure video streaming servers. It's exciting to get a chance to hone my skills with frontend frameworks like Vue.js while presenting large, complex sets of data and actions, ideally in a clear and concise way.
 
 ## Fun
 
-Banjo, books, and video games are my favorite outlets when I'm not working. I'm also doing a rewatch of the entire Star Wars saga available on Disney+. You can always see the latest books I've read and games I've played on my [shelves](/shelves) page.
+Banjo, books, and video games are my favorite pastimes outside of coding. You can always see the latest books I've read and games I've played on my [shelves](/shelves) page. On New Years Day, I performed with the Fralinger String Band in the Mummers Parade. Our 2025 show, entitled [Junkyard Jam](https://www.youtube.com/watch?v=AfvkHlMTdGs){:target="_blank"}, was awarded third prize.
 
-This New Year's Day I will be participating in my 24th Mummers Parade with my 22nd consecutive suit playing banjo in [Fralinger String Band](https://www.fralinger.org){:target="_blank"}. Really looking forward to showing you what we've come up with this year!
+Experiencing the community come together around the Eagles' Super Bowl victory was amazing. The second time is truly sweeter. Go Birds! 🦅
