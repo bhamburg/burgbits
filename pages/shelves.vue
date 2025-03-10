@@ -17,6 +17,9 @@ useHead({
             <a href="#books" class="text-lg">Books</a>
           </li>
           <li>
+            <a href="#films" class="text-lg">Films</a>
+          </li>
+          <li>
             <a href="#games" class="text-lg">Games</a>
           </li>
         </ul>
@@ -30,7 +33,18 @@ useHead({
             <em class="text-nowrap">— Mark Twain</em>
           </p>
         </blockquote>
-        <Shelf api="/api/books" />
+        <Shelf api="/api/books" grid />
+
+        <h2 id="films">Films</h2>
+        <blockquote>
+          <p>
+            “There should be a point to movies. Sure, you're giving people a diversion 
+            from the cold world for a bit, but at the same time, you pass on some facts 
+            and rules and maybe a little bit of wisdom.”
+            <em class="text-nowrap">— George Lucas</em>
+          </p>
+        </blockquote>
+        <Shelf api="/api/films" grid />
 
         <h2 id="games">Games</h2>
         <blockquote>
@@ -39,7 +53,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf api="/api/games" />
+        <Shelf api="/api/games" grid />
       </article>
     </div>
   </Section>

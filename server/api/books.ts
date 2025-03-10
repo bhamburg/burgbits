@@ -13,10 +13,12 @@ const parseGoodreads = async (url: string) => {
   const rows = parsedData?.querySelectorAll('.bookalike') || []
   let items = new Array
   rows?.forEach((row) => {
+    const parsedDate = row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text || ''
+    const formattedDate = parsedDate ? new Date(parsedDate).toISOString().slice(0,10) : undefined
     items.push({
       author: row.querySelector('.field.author')?.getElementsByTagName('a')?.at(0)?.text,
       coverSrc: row.getElementsByTagName('img')?.at(0)?.getAttribute('src'),
-      dateFinished: row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text,
+      dateFinished: formattedDate,
       title: row.querySelector('.field.title')?.getElementsByTagName('a')?.at(0)?.getAttribute('title'),
       url: goodreadsUrl + row.querySelector('.title')?.getElementsByTagName('a').at(0)?.getAttribute('href'),
     })
@@ -42,4 +44,4 @@ export default defineCachedEventHandler(async () => {
       }
     ]
   }
-}, { maxAge: 60 /* seconds */ })
+})//, { maxAge: 60 /* seconds */ })
