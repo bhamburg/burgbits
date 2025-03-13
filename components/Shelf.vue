@@ -130,20 +130,20 @@ watchEffect(() => {
             <th>Title</th>
             <th v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')">100% Completion</th>
             <th v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')">First Plathrough</th>
-            <th v-if="shelf.title.platforms">Platform</th>
-            <th v-if="shelf.title.author">Author</th>
+            <th v-if="shelf.title.toLowerCase().includes('played')">Platform</th>
+            <th v-if="shelf.title.toLowerCase().includes('read')">Author</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in shelf.items" :key="item.title">
-            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.dateFinished }}</td>
-            <td>
+            <td v-if="!shelf.title.toLowerCase().includes('current') && item.dateFinished">{{ item.dateFinished }}</td>
+            <td v-if="item.title">
               <NuxtLink :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
             </td>
-            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.completionLevel }}</td>
-            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.firstTime }}</td>
-            <td v-if="shelf.platforms">{{ item.platforms?.at(-1) }}</td>
-            <td v-if="shelf.author">{{ item.author }}</td>
+            <td v-if="!shelf.title.toLowerCase().includes('current') && item.completionLevel">{{ item.completionLevel }}</td>
+            <td v-if="!shelf.title.toLowerCase().includes('current') && item.firstTime">{{ item.firstTime }}</td>
+            <td v-if="item.platforms">{{ item.platforms?.at(-1) }}</td>
+            <td v-if="item.author">{{ item.author }}</td>
           </tr>
         </tbody>
       </table>
