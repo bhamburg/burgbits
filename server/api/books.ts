@@ -13,12 +13,17 @@ const parseGoodreads = async (url: string) => {
   const rows = parsedData?.querySelectorAll('.bookalike') || []
   let items = new Array
   rows?.forEach((row) => {
+    // dates are not uniform, so we need to parse them out
     const parsedDate = row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text || ''
     const formattedDate = parsedDate ? new Date(parsedDate).toISOString().slice(0,10) : undefined
     items.push({
+      // author
       author: row.querySelector('.field.author')?.getElementsByTagName('a')?.at(0)?.text,
-      coverSrc: row.getElementsByTagName('img')?.at(0)?.getAttribute('src'),
+      // strip out substrings that render the lower res images
+      coverSrc: row.getElementsByTagName('img')?.at(0)?.getAttribute('src')?.replace('._SX98_','').replace('SY160_',''),
+      // formatted date
       dateFinished: formattedDate,
+      // get the title and url from the link
       title: row.querySelector('.field.title')?.getElementsByTagName('a')?.at(0)?.getAttribute('title'),
       url: goodreadsUrl + row.querySelector('.title')?.getElementsByTagName('a').at(0)?.getAttribute('href'),
     })

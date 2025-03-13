@@ -53,7 +53,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf api="/api/games" grid />
+        <Shelf api="/api/games" />
       </article>
     </div>
   </Section>

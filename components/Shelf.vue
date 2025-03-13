@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const props = defineProps(['alwaysGrid','alwaysTable','api','grid','table'])
+const props = defineProps({
+  alwaysGrid: Boolean,
+  alwaysTable: Boolean,
+  api: String,
+  grid: Boolean,
+  table: Boolean
+})
 const isTable = ref(false)
 
 const toggleTable = () => {
@@ -8,11 +14,11 @@ const toggleTable = () => {
   }
 }
 
-const { data } = await useFetch<any>(props.api)
+const { data } = props.api ? await useFetch<any>(props?.api) : {}
 
 watchEffect(() => {
-  if (props.alwaysGrid || props.grid) {
-    isTable.value = false
+  if (props.alwaysTable || props.table) {
+    isTable.value = true
   }
 })
 </script>
@@ -21,8 +27,7 @@ watchEffect(() => {
   <ClientOnly v-for="shelf in data.shelves">
     <div class="flex justify-between content start">
       <h3>{{ shelf.title }}</h3>
-      Always grid: {{ props.alwaysGrid }}
-      <button v-if="!props.alwaysGrid || !props.alwaysTable" class="cursor-pointer mb-5 text-zinc-800 dark:text-white hover:text-sky-600 dark:hover:text-indigo-300" @click="toggleTable()">
+      <button v-if="!props.alwaysGrid && !props.alwaysTable" class="cursor-pointer mb-5 text-zinc-800 dark:text-white hover:text-sky-600 dark:hover:text-indigo-300" @click="toggleTable()">
         <ClientOnly>
           <a v-if="isTable" title="view as grid">
             <svg fill="currentColor" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -38,6 +43,7 @@ watchEffect(() => {
         <span class="sr-only">Toggle dark mode</span>
       </button>
     </div>
+    <!-- grid view -->
     <div v-if="!isTable" class="flex flex-row flex-wrap items-end justify-center md:justify-start no-underline">
       <NuxtLink v-for="item in shelf.items.slice(0, 17)" 
         :key="item.title"
@@ -115,6 +121,33 @@ watchEffect(() => {
         View all
       </NuxtLink>
     </div>
+    <!-- table view -->
+     <div v-if="isTable">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th v-if="!shelf.title.toLowerCase().includes('current')">Date Finished</th>
+            <th>Title</th>
+            <th v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')">100% Completion</th>
+            <th v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')">First Plathrough</th>
+            <th v-if="shelf.title.platforms">Platform</th>
+            <th v-if="shelf.title.author">Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in shelf.items" :key="item.title">
+            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.dateFinished }}</td>
+            <td>
+              <NuxtLink :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
+            </td>
+            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.completionLevel }}</td>
+            <td v-if="!shelf.title.toLowerCase().includes('current')">{{ item.firstTime }}</td>
+            <td v-if="shelf.platforms">{{ item.platforms?.at(-1) }}</td>
+            <td v-if="shelf.author">{{ item.author }}</td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
   </ClientOnly>
   <p>
     <span>Powered by <NuxtLink :to="data.profileUrl" target="_blank">{{ data.appName }}</NuxtLink></span><br />
