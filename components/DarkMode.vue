@@ -8,7 +8,7 @@ const toggleDarkMode = () => {
 
 <template>
   <button 
-    class="w-12 h-6 ml-1 mr-2 rounded-full bg-zinc-100 dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
+    class="w-12 h-6 ml-1 mr-4 rounded-full bg-zinc-100 dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
     @click="toggleDarkMode"
     title="toggle dark mode"
   >
