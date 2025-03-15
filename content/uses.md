@@ -1,5 +1,5 @@
 Last updated: February 2025  
-[What is a /uses page?](https://github.com/wesbos/awesome-uses/){:target="_blank"}
+[What is a /uses page?](https://uses.tech/){:target="_blank"}
 
 ## Hardware
 ### Computers
@@ -9,7 +9,7 @@ Last updated: February 2025
 - [Steam Deck (512 GB)](https://store.steampowered.com/steamdeck){:target="_blank"}
 - [MiSTer FPGA with analog I/O board](https://misteraddons.com/collections/kits-1/products/mister-pre-configured-bundle-with-aluminum-case?variant=39440209084549){:target="_blank"}
 - [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target="_blank"}
-- [Many](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"} gaming consoles, from [NES](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System){:target="_blank"} to [PS5](https://en.wikipedia.org/wiki/PlayStation_5){:target="_blank"} and multiple [Nintendo Switch](https://en.m.wikipedia.org/wiki/Nintendo_Switch){:target="_blank"} models.
+- [Many](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"} gaming consoles, from [NES](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System){:target="_blank"} to [PS5](https://en.wikipedia.org/wiki/PlayStation_5){:target="_blank"} and multiple [Nintendo Switch](https://en.m.wikipedia.org/wiki/Nintendo_Switch){:target="_blank"} models
 
 ### Monitors
 - [Gigabyte 31.5" M32U IPS HDR gaming monitor with KVM](https://www.gigabyte.com/Monitor/M32U){:target="_blank"}
@@ -53,11 +53,5 @@ Last updated: February 2025
 - [GarageBand](https://www.apple.com/mac/garageband/){:target="_blank"}
 - [MuseScore](https://musescore.org/){:target="_blank"}
 
-### This Site
-- [Vue.js](https://vuejs.org/){:target="_blank"}
-- [Nuxt](https://www.nuxt.org/){:target="_blank"}
-- [Tailwind CSS](https://tailwindcss.com/){:target="_blank"}
-- [Netlify](https://netlify.com/){:target="_blank"}
-
 ### Collection
-[View My Physical Video Game Collection on PriceCharting.](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"}
+[View My Physical Video Game Collection on PriceCharting](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"}

@@ -10,20 +10,12 @@ useHead({
   </Jumbotron>
   <Section>
     <div class="flex flex-col lg:flex-row-reverse">
-      <div class="lg:fixed flex flex-col toc lg:w-40 mt-8 lg:mt-14 mx-4 lg:ml-8 z-1">
-        <h2 class="my-0 text-xl">On This Page</h2>
-        <ul>
-          <li>
-            <a href="#books" class="text-lg">Books</a>
-          </li>
-          <li>
-            <a href="#films" class="text-lg">Films</a>
-          </li>
-          <li>
-            <a href="#games" class="text-lg">Games</a>
-          </li>
-        </ul>
-      </div>
+      
+      <OnThisPage :links="[
+        { text: 'Books', id: 'books' },
+        { text: 'Films', id: 'films' },
+        { text: 'Games', id: 'games' }
+      ]" />
 
       <article class="lg:w-[75%] lg:mr-auto pt-4">
         <h2 id="books">Books</h2>
@@ -33,7 +25,7 @@ useHead({
             <em class="text-nowrap">— Mark Twain</em>
           </p>
         </blockquote>
-        <Shelf api="/api/books" grid />
+        <Shelf api="/api/books" />
 
         <h2 id="films">Films</h2>
         <blockquote>
@@ -44,7 +36,7 @@ useHead({
             <em class="text-nowrap">— George Lucas</em>
           </p>
         </blockquote>
-        <Shelf api="/api/films" grid />
+        <Shelf api="/api/films" />
 
         <h2 id="games">Games</h2>
         <blockquote>
@@ -53,7 +45,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf api="/api/games" grid />
+        <Shelf api="/api/games" />
       </article>
     </div>
   </Section>

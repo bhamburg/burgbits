@@ -20,7 +20,7 @@ useHead({
 html {
   @apply scroll-smooth;
 }
-section {
+section, footer {
   article {
     @apply mx-4;
     p:first-child {
@@ -55,7 +55,7 @@ section {
       p-6 
       text-center 
       md:text-xl 
-      rounded
+      rounded-lg
       font-mono
       bg-gradient-to-l
       text-black 
@@ -63,7 +63,8 @@ section {
       from-sky-200 
       to-emerald-100 
       dark:from-indigo-950 
-      dark:to-black;
+      dark:to-black
+      shadow;
       p, p:first-child {
         @apply m-0;
       }
@@ -83,13 +84,16 @@ section {
     }
   }
   img {
-    @apply rounded w-full;
+    @apply rounded-lg w-full shadow;
+  }
+  img + em {
+    @apply italic text-zinc-500;
   }
   pre {
-    @apply bg-black text-white p-4 rounded overflow-auto;
+    @apply bg-black text-white p-4 rounded-lg overflow-auto shadow;
   }
   .video-container {
-    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden;
+    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden shadow;
     embed, iframe, object {
       @apply absolute top-0 left-0 w-full h-full;
     }

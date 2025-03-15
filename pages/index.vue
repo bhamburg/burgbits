@@ -4,16 +4,16 @@
       <div class="md:mx-5 p-4">
         <h2>Hi, I&rsquo;m Brian.</h2>
         <p class="md:text-2xl pt-5">I&rsquo;m a 
-          <span class="font-mono bg-black bg-opacity-10 dark:bg-opacity-100 rounded px-1">software engineer</span>,<br /> 
+          <span class="font-mono bg-black bg-opacity-10 dark:bg-opacity-100 rounded px-1 shadow">software engineer</span>,<br /> 
           a <strong><em>designer</em></strong>,<br />
           and a <em class="font-serif">musician</em>.
         </p>
         <div>
           <Button to="/about" aria-current="page" type="button" class="solid">
-            Learn about me
+            Learn About Me
           </Button>
           <Button to="/now" aria-current="page" type="button">
-            What I'm doing now
+            What I'm Doing Now
           </Button>
         </div>
       </div>
@@ -23,8 +23,8 @@
     </Jumbotron>
 
     <Section>
-      <article class="flex flex-col md:flex-row mt-10">
-        <div class="mx-4">
+      <article class="grid grid-cols-1 lg:grid-cols-3 gap-7 mt-10">
+        <div class="bg-zinc-100 dark:bg-zinc-700 p-6 pb-0 shadow rounded-lg">
           <h3>Software Engineer</h3>
           <p>
             With over a decade of experience building user interfaces for 
@@ -32,7 +32,7 @@
             to remove friction from the user experience.
           </p>
         </div>
-        <div class="mx-4">
+        <div class="bg-zinc-100 dark:bg-zinc-700 p-6 pb-0 shadow rounded-lg">
           <h3>Designer</h3>
           <p>
             My background in graphic design gives me an appreciation for both 
@@ -40,7 +40,7 @@
             are usable and reusable. Design is how it works!
           </p>
         </div>
-        <div class="mx-4">
+        <div class="bg-zinc-100 dark:bg-zinc-700 p-6 pb-0 shadow rounded-lg">
           <h3>Musician</h3>
           <p>
             When I'm not behind my laptop, you can often find me behind my 

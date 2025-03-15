@@ -6,14 +6,8 @@
       </Jumbotron>
       <Section>
         <div class="flex flex-col lg:flex-row-reverse">
-          <div class="lg:fixed flex flex-col toc lg:w-40 mt-8 lg:mt-14 mx-4 lg:ml-8 z-1">
-            <h2 class="my-0 text-xl">On This Page</h2>
-            <ul>
-              <li v-for="link of doc?.body?.toc?.links" :key="link.id">
-                <NuxtLink :to="`#${link.id}`" class="text-lg">{{ link.text }}</NuxtLink>
-              </li>
-            </ul>
-          </div>
+
+          <OnThisPage :links="doc?.body?.toc?.links" />
         
           <article class="lg:w-[75%] lg:mr-auto mt-4">
             <img v-if="doc.featuredImage" class="lg:mt-10 mb-4" :src="doc.featuredImage"></img>

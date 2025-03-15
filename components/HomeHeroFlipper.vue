@@ -131,10 +131,10 @@
               'src': '/images/with-fralinger-shades.jpg',
               'alt': 'banjo with shades'
             },
-            // {
-            //   'src': '/images/work-at-dice.jpg',
-            //   'alt': 'at work'
-            // },
+            {
+              'src': '/images/illusions.jpg',
+              'alt': 'illusions'
+            },
             {
               'src': '/images/java-bean-hamburg.jpg',
               'alt': 'Java the Bunny'

@@ -5,6 +5,7 @@
       inline-block
       bg-transparent
       no-underline 
+      font-mono
       text-sky-800
       hover:text-white 
       dark:text-white
@@ -19,6 +20,7 @@
       px-4 
       rounded-full 
       transition-colors
+      shadow
     ">
     <slot />
   </NuxtLink>
@@ -26,7 +28,7 @@
 
 <style lang="postcss" scoped>
   .solid {
-    @apply text-white !outline-none bg-sky-600  hover:bg-sky-500 dark:bg-indigo-300 dark:hover:bg-indigo-500 py-3 px-5
+    @apply text-white !outline-none bg-sky-600  hover:bg-sky-500 dark:bg-black dark:hover:bg-zinc-900 py-3 px-5
   }
   .jumbotron a {
     @apply text-white outline-white hover:text-sky-800 hover:bg-white dark:hover:text-indigo-900
