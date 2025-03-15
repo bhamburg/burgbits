@@ -49,4 +49,4 @@ export default defineCachedEventHandler(async () => {
       }
     ]
   }
-})//, { maxAge: 60 /* seconds */ })
+}, { maxAge: 60 /* seconds */ })
