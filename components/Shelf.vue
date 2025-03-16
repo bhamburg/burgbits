@@ -13,7 +13,7 @@ const toggleTable = () => {
   }
 }
 
-const { data: data } = props.api ? await useFetch<any>(props?.api) : {}
+const { data } = props.api ? await useFetch<any>(props?.api, { server: false }) : {}
 
 watchEffect(() => {
   if (props.alwaysTable || props.table) {
