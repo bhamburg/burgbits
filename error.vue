@@ -16,7 +16,7 @@ const props = defineProps({
       <article class="pt-4">
         <h2>Uh oh...</h2>
         <p>Sorry, there's been a problem.</p>
-        <Button to="/" class="solid mt-10">Go to home</Button>
+        <Button to="/" class="solid mt-10">Go to Home</Button>
       </article>
     </Section>
     <AppFooter class="mt-auto" />
