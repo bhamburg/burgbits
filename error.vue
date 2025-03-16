@@ -13,9 +13,11 @@ const props = defineProps({
       <h1>{{ error?.statusCode + ' Error' || 'Error'}}</h1>
     </Jumbotron>
     <Section class="text-center">
-      <h2>Uh oh...</h2>
-      <p>Sorry, there's been a problem.</p>
-      <Button to="/" class="solid mt-10">Go to home</Button>
+      <article class="pt-4">
+        <h2>Uh oh...</h2>
+        <p>Sorry, there's been a problem.</p>
+        <Button to="/" class="solid mt-10">Go to home</Button>
+      </article>
     </Section>
     <AppFooter class="mt-auto" />
   </NuxtLayout>
