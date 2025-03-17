@@ -28,7 +28,7 @@ section, footer {
     }
   }
   h2 {
-    @apply font-black text-3xl md:text-4xl mb-6 md:mt-10 scroll-mt-20;
+    @apply font-black text-3xl md:text-4xl mb-6 mt-8 md:mt-10 scroll-mt-20;
   }
   h3 {
     @apply font-black text-2xl scroll-mt-20;
@@ -87,7 +87,7 @@ section, footer {
     @apply rounded-lg w-full shadow;
   }
   img + em {
-    @apply italic text-zinc-500;
+    @apply italic text-zinc-500 text-sm;
   }
   pre {
     @apply bg-black text-white p-4 rounded-lg overflow-auto shadow;

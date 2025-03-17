@@ -1,9 +1,9 @@
 <template>
   <main>
     <Jumbotron>
-      <div class="md:mx-5 p-4">
+      <div class="md:mx-5 py-4">
         <h2>Hi, I&rsquo;m Brian.</h2>
-        <p class="md:text-2xl pt-5">I&rsquo;m a 
+        <p class="text-xl md:text-2xl pt-5">I&rsquo;m a 
           <span class="font-mono bg-black bg-opacity-10 dark:bg-opacity-100 rounded px-1 shadow">software engineer</span>,<br /> 
           a <strong><em>designer</em></strong>,<br />
           and a <em class="font-serif">musician</em>.
