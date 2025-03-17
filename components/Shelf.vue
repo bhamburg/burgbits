@@ -23,7 +23,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <ClientOnly>
+  <div v-if="!data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 text-zinc-500 text-center p-4 mb-4 rounded-lg shadow">
+      Loading shelf...
+    </div>
     <div v-if="data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 p-4 mb-4 rounded-lg shadow">
       <div v-for="shelf in data.shelves">
         <div class="flex justify-between content start">
@@ -146,10 +148,4 @@ watchEffect(() => {
           at {{ new Date(data.fetched).toLocaleTimeString('en-us') }}
       </p>
     </div>
-  </ClientOnly>
-  <ClientOnly>
-    <div v-if="!data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 text-zinc-500 text-center p-4 rounded-lg shadow">
-      Loading shelf...
-    </div>
-  </ClientOnly>
 </template>

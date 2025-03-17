@@ -7,12 +7,12 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-  <button 
-    class="w-12 h-6 ml-1 mr-4 rounded-full bg-zinc-100 dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
-    @click="toggleDarkMode"
-    title="toggle dark mode"
-  >
-    <ClientOnly>
+  <ClientOnly>
+    <button 
+      class="w-12 h-6 ml-1 mr-4 rounded-full bg-zinc-100 dark:bg-zinc-700 flex items-center transition duration-300 focus:outline-none shadow"
+      @click="toggleDarkMode"
+      title="toggle dark mode"
+    >
       <div
         id="switch-toggle"
         :class="colorMode.value === 'dark' ? 'bg-black translate-x-6' : 'bg-yellow-500 -translate-x-2'"
@@ -25,7 +25,7 @@ const toggleDarkMode = () => {
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </div>
-    </ClientOnly>
-    <span class="sr-only">toggle dark mode</span>
-  </button>
+      <span class="sr-only">toggle dark mode</span>
+    </button>
+  </ClientOnly>
 </template>

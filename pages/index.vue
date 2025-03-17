@@ -10,10 +10,7 @@
         </p>
         <div>
           <Button to="/about" aria-current="page" type="button" class="solid">
-            Learn About Me
-          </Button>
-          <Button to="/now" aria-current="page" type="button">
-            What I'm Doing Now
+            About Brian
           </Button>
         </div>
       </div>

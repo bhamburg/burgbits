@@ -5,18 +5,21 @@
     title="Click me!"
   >
     <div class="flip-card-inner">
-      <div class="flip-card-front rounded-full w-full bg-white border-8 border-white">
+      <div class="flip-card-front rounded-full w-full bg-slate-700 border-8 border-white shadow-inner">
         <ClientOnly>
-          <img
-            class="rounded-full w-full"
-            src="/images/brian-hamburg-profile-photo-DICE2019.jpeg" 
+          <NuxtImg
+            :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
             alt="Brian Hamburg"
+            class="rounded-full w-full transition-opacity duration-1000"
+            src="/images/brian-hamburg-profile-photo-DICE2019.jpeg" 
+            @load="heroLoaded = true"
           />
         </ClientOnly>
       </div>
       <div class="flip-card-back rounded-full w-full bg-white border-8 border-white">
         <ClientOnly>
-          <img 
+          <NuxtImg
+            alt="Brian Hamburg"
             class="rounded-full w-full"
             :src="photos[photoIndex].src" 
             :alt="photos[photoIndex].alt"
@@ -70,6 +73,7 @@
     data () {
       let flipped  = false,
           flipping = false,
+          heroLoaded = false,
           photos   = [
             {
               'src': '/images/2015-mummers-parade.jpg',
@@ -103,18 +107,18 @@
               'src': '/images/love-phila.jpg',
               'alt': 'With Love, Philadelphia'
             },
-            // {
-            //   'src': '/images/midnight-society.jpg',
-            //   'alt': 'Drew Nugent and the Midnight Society gig'
-            // },
+            {
+              'src': '/images/nifty-fifties.jpg',
+              'alt': 'Daughter Daddy Dance'
+            },
             {
               'src': '/images/night-out.jpg',
               'alt': 'fancy night out'
             },
-            // {
-            //   'src': '/images/ramblers-bookstore.jpg',
-            //   'alt': 'Red Hot Ramblers at the Bookstore Speakeasy'
-            // },
+            {
+              'src': '/images/fancy-wedding.jpg',
+              'alt': 'Wedding at the Union League'
+            },
             {
               'src': '/images/the-claw.jpg',
               'alt': 'claw machine halloween costume'
@@ -151,12 +155,17 @@
               'src': '/images/old-timey-banjo.png',
               'alt': 'Red Hot Ramblers gig in black and white'
             },
+            {
+              'src': '/images/eagles-car.jpg',
+              'alt': 'Red Hot Ramblers gig in black and white'
+            },
           ],
           photoIndex = Math.floor(Math.random() * photos.length); // start with random photo from array
 
       return {
         flipped,
         flipping,
+        heroLoaded,
         photoIndex,
         photos
       }

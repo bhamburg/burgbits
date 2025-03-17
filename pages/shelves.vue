@@ -18,7 +18,7 @@ useHead({
       ]" />
 
       <article class="lg:w-[75%] lg:mr-auto pt-4">
-        <h2 id="books">Books</h2>
+        <h2 id="books" class="mt-4">Books</h2>
         <blockquote>
           <p>
             “The man who does not read has no advantage over the man who cannot read.”
