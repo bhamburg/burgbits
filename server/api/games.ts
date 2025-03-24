@@ -12,10 +12,13 @@ const parseGrouvee = async (api: string) => {
   const games = data?.serialized_data?.ssgs
   let items = new Array
   games?.forEach((game: any) => {
+    const formattedDate = getLatestPlaythrough(game?.dates)?.date_finished 
+      ? new Date(getLatestPlaythrough(game.dates).date_finished).toLocaleDateString("en-GB", { month: 'short', day: 'numeric', year: 'numeric' }) 
+      : undefined
     items.push({
       completionLevel: getLatestPlaythrough(game?.dates)?.level_of_completion,
       coverSrc: game?.game?.thumbnail_147_220,
-      dateFinished: getLatestPlaythrough(game?.dates)?.date_finished,
+      dateFinished: formattedDate,
       firstTime: game?.dates?.length === 1,
       platforms: game?.metadata?.platforms?.map((platform: any) => platform.name),
       rating: game?.review?.rating,

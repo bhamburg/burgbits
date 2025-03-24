@@ -12,7 +12,6 @@ const toggleTable = () => {
     isTable.value = !isTable.value
   }
 }
-
 const { data } = props.api ? await useFetch<any>(props?.api, { server: false }) : {}
 
 watchEffect(() => {
@@ -23,16 +22,27 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div v-if="!data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 text-zinc-500 text-center p-4 mb-4 rounded-lg shadow">
+    <div v-if="!data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 text-zinc-500 text-center p-4 mb-4 rounded-lg shadow">
       Loading shelf...
     </div>
     <div v-if="data" class=" font-mono bg-zinc-100 dark:bg-zinc-700 p-4 mb-4 rounded-lg shadow">
       <div v-for="shelf in data.shelves">
-        <div class="flex justify-between content start">
-          <h3 class="font-sans">{{ shelf.title }}</h3>
+        <div class="flex flex-col justify-between items-center mb-6 md:flex-row">
+          <h3 class="font-sans mt-3 mb-3">{{ shelf.title }}</h3>
           <div>
-            <button @click="toggleTable" class="text-sm text-sky-800 hover:text-sky-600 dark:text-indigo-300 dark:hover:text-indigo-500">
-              {{ isTable ? 'Grid View' : 'Table View' }}
+            <button 
+              @click="toggleTable"
+              title="toggle table"
+              class="relative"
+            >
+              <div 
+                id="switch-toggle" 
+                class="flex items-center bg-zinc-200 dark:bg-zinc-600 rounded-full p-1 after:absolute after:left-1 after: after:h-6 after:w-20 after:rounded-full after:bg-black/10 dark:after:bg-white/20 after:transition-all after:content-['']"
+                :class="isTable ? 'after:translate-x-full' : ''">
+                <div class="w-20">Covers</div>
+                <div class="w-20">Table</div>
+              </div>
+              <span class="sr-only">toggle table</span>
             </button>
           </div>
         </div>
@@ -45,27 +55,63 @@ watchEffect(() => {
               + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')
               + (item.firstTime ? ' - First Playthrough' : '')
               + (item.completionLevel === 'A' ? ' - 100% Completion' : '')
-            " :to="item.url" class="mx-[11.2px] 
+              + (item.dateFinished ? ` - Finished on ${item.dateFinished}` : '')
+            " :to="item.url" 
+            class="mx-[11.2px] 
               mb-10 
               drop-shadow-md 
               hover:drop-shadow-lg 
               hover:scale-105 
               relative
-              no-underline" target="_blank">
-            <img :alt="item.title" :src="item.coverSrc" class="w-24 
-                rounded-none
-                border-none
-                transition-opacity" />
+              no-underline overflow-hidden
+            " 
+            target="_blank"
+            >
+            <div v-if="item.dateFinished" 
+              class="
+                bg-black 
+                text-white 
+                text-[0.5rem]
+                absolute
+                px-10
+                w-[max-content]
+                top-[8px]
+                right-[14px]
+                shadow-md
+                text-center
+                translate-x-1/2
+                rotate-45"
+            >
+              {{ item.dateFinished?.slice(0, item.dateFinished.length - 5) }}
+            </div>
+            <img :alt="item.title" :src="item.coverSrc" class="w-24 rounded-none border-none transition-opacity" />
             <div v-if="!shelf.title.toLowerCase().includes('current')">
-              <div class="flex">
+              <div class="flex overflow-hidden w-24 absolute bottom-0">
                 <div v-if="item.firstTime" :class="item.completionLevel === 'A' ? 'w-1/2' : 'w-full'" class="
                     bg-emerald-500 
                     text-white 
                     text-[0.5rem] 
                     text-center 
+                    w-1/2
                   ">
                   NEW
                 </div>
+                <div 
+                  v-if="item.completionLevel === 'A' && item.firstTime" 
+                  class="
+                    border-t-0
+                    border-b-0
+                    border-l-emerald-500 
+                    border-l-[8px] 
+                    border-r-sky-600 
+                    border-r-[8px] 
+                    h-5
+                    rotate-45
+                    absolute
+                    bottom-[-3.5px]
+                    left-10
+                  "
+                />
                 <div v-if="item.completionLevel === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
                     bg-sky-600 
                     text-white 
@@ -75,18 +121,10 @@ watchEffect(() => {
                   100%
                 </div>
               </div>
-              <div class="
-                bg-black
-                text-white
-                text-[0.5rem] 
-                text-center 
-              ">
-                Finished {{ item.dateFinished }}
-              </div>
             </div>
           </NuxtLink>
           <NuxtLink v-if="shelf.items.length > 6" :to="shelf.fetchedFrom" target="_blank" 
-            class="flex items-center text-center font-bold capitalize justify-center h-[156px] w-24 mx-3 mb-10
+            class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-10
               bg-gradient-to-l hover:bg-gradient-to-r text-white hover:text-white from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black 
               drop-shadow-md hover:drop-shadow-lg no-underline hover:scale-105">
             View all
@@ -97,7 +135,7 @@ watchEffect(() => {
           <table class="w-full text-sm mb-10" mt--2>
             <thead>
               <tr class="text-left">
-                <th v-if="!shelf.title.toLowerCase().includes('current')" class="p-2">Date</th>
+                <th v-if="!shelf.title.toLowerCase().includes('current')" class="p-2" width="120px">Date</th>
                 <th class="p-2">Title</th>
                 <th v-if="shelf.title.toLowerCase().includes('play')" class="p-2">Platform</th>
                 <th v-if="shelf.title.toLowerCase().includes('read')" class="p-2">Author</th>
@@ -111,7 +149,7 @@ watchEffect(() => {
             </thead>
             <tbody>
               <tr v-for="item in shelf.items.slice(0, 17)" :key="item.title" class="odd:bg-zinc-200 dark:odd:bg-zinc-600">
-                <td v-if="!shelf.title.toLowerCase().includes('current') && item.dateFinished" class="p-2">
+                <td v-if="!shelf.title.toLowerCase().includes('current') && item.dateFinished" class="p-2 text-right">
                   {{ item.dateFinished }}
                 </td>
                 <td v-if="item.title" class="p-2">
@@ -142,10 +180,10 @@ watchEffect(() => {
       <p class="mb-2 text-sm text-center text-zinc-500">
         <span>Powered by <NuxtLink :to="data.profileUrl" target="_blank">{{ data.appName }}</NuxtLink></span><br />
           Last fetched:
-          {{ new Date(data.fetched).toLocaleDateString('en-us', {
-          weekday:"long", year:"numeric", month:"short", day:"numeric"
+          {{ new Date(data.fetched).toLocaleDateString('en-gb', {
+            weekday:"long", year:"numeric", month:"long", day:"numeric"
           }) }}
-          at {{ new Date(data.fetched).toLocaleTimeString('en-us') }}
+          at {{ new Date(data.fetched).toLocaleTimeString('en-gb') }}
       </p>
     </div>
 </template>
