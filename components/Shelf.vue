@@ -6,14 +6,56 @@ const props = defineProps({
   grid: Boolean,
   table: Boolean
 })
+
+const { status, data: data } = await useLazyFetch<any>(props.api!)
+
 const isTable = ref(false)
+const sortColumn = ref('dateFinished')
+const sortDirection = ref('desc')
+
+const sortByColumn = (column: string) => {
+  if (sortColumn.value === column) {
+    sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    sortColumn.value = column
+    sortDirection.value = 'asc'
+  }
+}
+
+const sortedShelf = (shelf: any) => {
+  return {
+    ...shelf,
+    __sortedItems: shelf.items.slice(0, 17).sort((a: any, b: any) => {
+      if (sortColumn.value === 'dateFinished') {
+        return sortDirection.value === 'asc' 
+          ? new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime() 
+          : new Date(b.dateFinished).getTime() - new Date(a.dateFinished).getTime()
+      }
+      if (sortColumn.value === 'title') {
+        return sortDirection.value === 'asc' 
+          ? a.title.localeCompare(b.title) 
+          : b.title.localeCompare(a.title)
+      }
+      if (sortColumn.value === 'author') {
+        return sortDirection.value === 'asc' 
+          ? a.author.localeCompare(b.author) 
+          : b.author.localeCompare(a.author)
+      }
+      if (sortColumn.value === 'platform') {
+        return sortDirection.value === 'asc' 
+          ? a.platforms?.at(-1)?.localeCompare(b.platforms?.at(-1)) 
+          : b.platforms?.at(-1)?.localeCompare(a.platforms?.at(-1))
+      }
+      return 0
+    })
+  }
+}
+
 const toggleTable = () => {
   if (!props.alwaysGrid || !props.alwaysTable) {
     isTable.value = !isTable.value
   }
 }
-
-const { status, data: data } = await useLazyFetch<any>(props.api!)
 
 watchEffect(() => {
   if (props.alwaysTable || props.table) {
@@ -28,13 +70,13 @@ watchEffect(() => {
   </div>
   <div v-else class=" font-mono bg-zinc-100 dark:bg-zinc-700 p-4 mb-4 rounded-lg shadow">
     <div v-for="shelf in data.shelves">
-      <div class="flex flex-col justify-between items-center mb-6 md:flex-row">
+      <div class="flex flex-col justify-between items-center mb-4 md:flex-row">
         <h3 class="font-sans mt-3 mb-3">{{ shelf.title }}</h3>
         <div v-if="!props.alwaysTable && !props.alwaysGrid">
           <button 
             @click="toggleTable"
             title="toggle table"
-            class="relative"
+            class="relative mb-4"
           >
             <div 
               id="switch-toggle" 
@@ -58,16 +100,17 @@ watchEffect(() => {
             + (item.completionLevel === 'A' ? ' - 100% Completion' : '')
             + (item.dateFinished ? ` - Finished on ${item.dateFinished}` : '')
           " :to="item.url" 
-          class="mx-[11.2px] 
-            mb-10 
+          class="mx-[12.3px] 
+            mb-6 
             drop-shadow-md 
             hover:drop-shadow-lg 
             hover:scale-105 
             relative
-            no-underline overflow-hidden
-          " 
+            no-underline 
+            overflow-hidden
+            shadow" 
           target="_blank"
-          >
+        >
           <div v-if="item.dateFinished" 
             class="
               bg-black 
@@ -89,12 +132,12 @@ watchEffect(() => {
           <div v-if="!shelf.title.toLowerCase().includes('current')">
             <div class="flex overflow-hidden w-24 absolute bottom-0">
               <div v-if="item.firstTime" :class="item.completionLevel === 'A' ? 'w-1/2' : 'w-full'" class="
-                  bg-emerald-500 
-                  text-white 
-                  text-[0.5rem] 
-                  text-center 
-                  w-1/2
-                ">
+                bg-emerald-500 
+                text-white 
+                text-[0.5rem] 
+                text-center 
+                w-1/2"
+              >
                 NEW
               </div>
               <div 
@@ -110,8 +153,7 @@ watchEffect(() => {
                   rotate-45
                   absolute
                   bottom-[-3.5px]
-                  left-10
-                "
+                  left-10"
               />
               <div v-if="item.completionLevel === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
                   bg-sky-600 
@@ -125,21 +167,60 @@ watchEffect(() => {
           </div>
         </NuxtLink>
         <NuxtLink v-if="shelf.items.length > 6" :to="shelf.fetchedFrom" target="_blank" 
-          class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-10
+          class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-6
             bg-gradient-to-l hover:bg-gradient-to-r text-white hover:text-white from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black 
             drop-shadow-md hover:drop-shadow-lg no-underline hover:scale-105">
           View all
         </NuxtLink>
       </div>
+      
       <!-- table view -->
       <div v-show="isTable" class="overflow-x-auto">
-        <table class="w-full text-sm mb-10" mt--2>
+        <table class="w-full min-w-[540px] text-sm">
           <thead>
             <tr class="text-left">
-              <th v-if="!shelf.title.toLowerCase().includes('current')" class="p-2" width="120px">Date</th>
-              <th class="p-2">Title</th>
-              <th v-if="shelf.title.toLowerCase().includes('play')" class="p-2">Platform</th>
-              <th v-if="shelf.title.toLowerCase().includes('read')" class="p-2">Author</th>
+              <th 
+                v-if="!shelf.title.toLowerCase().includes('current')"  
+                class="p-2 cursor-pointer w-32"
+                @click="sortByColumn('dateFinished')"
+              >
+                Date 
+                <span v-if="sortColumn === 'dateFinished'">
+                  <span v-if="sortDirection === 'asc'" title="sorted ascending by date">▲</span>
+                  <span v-else title="sorted descending by date">▼</span>
+                </span>
+              </th>
+              <th 
+                class="p-2 cursor-pointer"
+                @click="sortByColumn('title')"
+              >
+                Title
+                <span v-if="sortColumn === 'title'">
+                  <span v-if="sortDirection === 'asc'" title="sorted ascending by title">▲</span>
+                  <span v-else title="sorted descending by title">▼</span>
+                </span>
+              </th>
+              <th 
+                v-if="shelf.title.toLowerCase().includes('play')" 
+                class="p-2 cursor-pointer"
+                @click="sortByColumn('platform')">
+                Platform
+                <span v-if="sortColumn === 'platform'">
+                  <span v-if="sortDirection === 'asc'" title="sorted ascending by platform">▲</span>
+                  <span v-else title="sorted descending by platform">▼</span>
+                </span>
+              </th>
+              <th 
+                v-if="shelf.title.toLowerCase().includes('read')" 
+                class="p-2 cursor-pointer"
+                @click="sortByColumn('author')"
+              >
+                Author
+                <span v-if="sortColumn === 'author'">
+                  <span v-if="sortDirection === 'asc'" title="sorted ascending by author">▲</span>
+                  <span v-else title="sorted descending by author">▼</span>
+                </span>
+              </th>
               <th v-if="shelf.title.toLowerCase().includes('played')" class="p-2">
                 New
               </th>
@@ -149,8 +230,15 @@ watchEffect(() => {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in shelf.items.slice(0, 17)" :key="item.title" class="odd:bg-zinc-200 dark:odd:bg-zinc-600">
-              <td v-if="!shelf.title.toLowerCase().includes('current') && item.dateFinished" class="p-2 text-right">
+            <tr 
+              v-for="item in sortedShelf(shelf).__sortedItems" 
+              :key="item.title" 
+              class="h-14 odd:bg-zinc-200 dark:odd:bg-zinc-600"
+            >
+              <td 
+                v-if="!shelf.title.toLowerCase().includes('current') && item.dateFinished" 
+                class="p-2 text-right w-32"
+              >
                 {{ item.dateFinished }}
               </td>
               <td v-if="item.title" class="p-2">
@@ -167,18 +255,20 @@ watchEffect(() => {
                 <span v-if="item.completionLevel === 'A'" class="cursor-help" title="100% completion">✔</span>
               </td>
             </tr>
-            <tr v-if="shelf.items.length > 6" :to="shelf.fetchedFrom">
-              <td colspan="100%" class="p-2 text-center">
-                <NuxtLink v-if="shelf.items.length > 6" :to="shelf.fetchedFrom" target="_blank">
-                  View all
-                </NuxtLink>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
+      <div v-if="isTable" class="flex justify-center my-4 text-sm">
+        <NuxtLink 
+          v-if="shelf.items.length > 6" 
+          :to="shelf.fetchedFrom" 
+          target="_blank"
+        >
+          View all
+        </NuxtLink>
+      </div>
     </div>
-    <p class="mb-2 text-sm text-center text-zinc-500">
+    <p class="my-2 text-sm text-center text-zinc-500">
       <span>Powered by <NuxtLink :to="data.profileUrl" target="_blank">{{ data.appName }}</NuxtLink></span><br />
         Last fetched:
         {{ new Date(data.fetched).toLocaleDateString('en-gb', {

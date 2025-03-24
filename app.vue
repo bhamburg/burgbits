@@ -22,9 +22,9 @@ html {
 }
 section, footer {
   article {
-    @apply mx-4;
+    @apply mx-2;
     p:first-child {
-      @apply md:mt-10
+      @apply mt-4 md:mt-10
     }
   }
   h2 {

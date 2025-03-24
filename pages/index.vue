@@ -20,7 +20,7 @@
     </Jumbotron>
 
     <Section>
-      <article class="grid grid-cols-1 lg:grid-cols-3 gap-7 mt-10">
+      <article class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-7 mt-4 lg:mt-10">
         <div class="bg-zinc-100 dark:bg-zinc-700 p-6 pb-0 shadow rounded-lg">
           <h3>Software Engineer</h3>
           <p>
