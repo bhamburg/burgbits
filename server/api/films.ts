@@ -35,7 +35,7 @@ export default defineCachedEventHandler(async () => {
     shelves: [
       { 
         title: 'Recently Watched',
-        fetchedFrom: feedUrl,
+        fetchedFrom: profileUrl + '/films/diary',
         items: await parseLetterboxd(feedUrl),
       }
     ]
