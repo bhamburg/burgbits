@@ -27,6 +27,8 @@ const parseGoodreads = async (url: string) => {
       dateFinished: formattedDate,
       // get the title and url from the link
       title: row.querySelector('.field.title')?.getElementsByTagName('a')?.at(0)?.getAttribute('title'),
+      // get my rating
+      rating: row.querySelector('.field.rating')?.querySelectorAll('.staticStar.p10').length || 0,
       url: goodreadsUrl + row.querySelector('.title')?.getElementsByTagName('a').at(0)?.getAttribute('href'),
     })
   })
@@ -51,4 +53,4 @@ export default defineCachedEventHandler(async () => {
       }
     ]
   }
-}, { maxAge: 60 /* seconds */ })
+})

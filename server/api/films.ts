@@ -18,7 +18,7 @@ const parseLetterboxd = async (url: string) => {
     items.push({
       coverSrc: film.content.split('\"')[1],
       dateFinished: formattedDate,
-      rating: film.title.split(' - ')[1],
+      rating: film.title.split(' - ')[1]?.length,
       releaseYear: trimmedTitle.slice(trimmedTitle.length - 4,trimmedTitle.length),
       title: trimmedTitle.slice(0,trimmedTitle.length - 6),
       url: film.link

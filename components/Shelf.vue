@@ -46,6 +46,11 @@ const sortedShelf = (shelf: any) => {
           ? a.platforms?.at(-1)?.localeCompare(b.platforms?.at(-1)) 
           : b.platforms?.at(-1)?.localeCompare(a.platforms?.at(-1))
       }
+      if (sortColumn.value === 'rating') {
+        return sortDirection.value === 'asc' 
+          ? a.rating - b.rating 
+          : b.rating - a.rating
+      }
       return 0
     })
   }
@@ -99,6 +104,7 @@ watchEffect(() => {
             + (item.firstTime ? ' - First Playthrough' : '')
             + (item.completionLevel === 'A' ? ' - 100% Completion' : '')
             + (item.dateFinished ? ` - Finished on ${item.dateFinished}` : '')
+            + (item.rating ? ` - ${item.rating} out of 5 stars` : '')
           " :to="item.url" 
           class="mx-[12.3px] 
             mb-6 
@@ -107,8 +113,7 @@ watchEffect(() => {
             hover:scale-105 
             relative
             no-underline 
-            overflow-hidden
-            shadow" 
+            overflow-hidden" 
           target="_blank"
         >
           <div v-if="item.dateFinished" 
@@ -128,9 +133,16 @@ watchEffect(() => {
           >
             {{ item.dateFinished?.slice(0, item.dateFinished.length - 5) }}
           </div>
-          <img :alt="item.title" :src="item.coverSrc" class="w-24 rounded-none border-none transition-opacity" />
+          <img :alt="item.title" 
+            :src="item.coverSrc" 
+            class="w-24 
+              rounded-none 
+              border-none 
+              transition-opacity
+              shadow" 
+          />
           <div v-if="!shelf.title.toLowerCase().includes('current')">
-            <div class="flex overflow-hidden w-24 absolute bottom-0">
+            <div class="flex overflow-hidden w-24 absolute bottom-6">
               <div v-if="item.firstTime" :class="item.completionLevel === 'A' ? 'w-1/2' : 'w-full'" class="
                 bg-emerald-500 
                 text-white 
@@ -165,9 +177,12 @@ watchEffect(() => {
               </div>
             </div>
           </div>
+          <div v-if="item.rating && !shelf.title.toLowerCase().includes('current')" class="text-center text-black dark:text-white">
+            <span v-for="star in item.rating" :key="star">★</span>
+          </div>
         </NuxtLink>
-        <NuxtLink v-if="shelf.items.length > 6" :to="shelf.fetchedFrom" target="_blank" 
-          class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-6
+        <NuxtLink v-if="shelf.items.length > 17" :to="shelf.fetchedFrom" target="_blank" 
+          class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-12
             bg-gradient-to-l hover:bg-gradient-to-r text-white hover:text-white from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black 
             drop-shadow-md hover:drop-shadow-lg no-underline hover:scale-105">
           View all
@@ -227,6 +242,17 @@ watchEffect(() => {
               <th v-if="shelf.title.toLowerCase().includes('played')" class="p-2">
                 100%
               </th>
+              <th 
+                v-if="!shelf.title.toLowerCase().includes('current') && !shelf.title.toLowerCase().includes('run')" 
+                class="p-2 w-24 text-center cursor-pointer"
+                @click="sortByColumn('rating')"
+              >
+                Rating
+                <span v-if="sortColumn === 'rating'" class="text-sm">
+                  <span v-if="sortDirection === 'asc'" title="sorted ascending by rating">▲</span>
+                  <span v-else title="sorted descending by rating">▼</span>
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -254,13 +280,16 @@ watchEffect(() => {
                 class="text-sky-600 text-center text-2xl p-2">
                 <span v-if="item.completionLevel === 'A'" class="cursor-help" title="100% completion">✔</span>
               </td>
+              <td v-if="!shelf.title.toLowerCase().includes('current')" class="p-2 text-xl text-center">
+                <span v-for="star in item.rating" :key="star">★</span>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div v-if="isTable" class="flex justify-center my-4 text-sm">
         <NuxtLink 
-          v-if="shelf.items.length > 6" 
+          v-if="shelf.items.length > 17" 
           :to="shelf.fetchedFrom" 
           target="_blank"
         >
