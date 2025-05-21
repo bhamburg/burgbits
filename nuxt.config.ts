@@ -15,7 +15,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  compatibilityDate: '2024-10-24',
   devtools: {enabled: true},
+  gtag: {
+    id: 'G-30HMKNVJE0',
+  },
   modules: [
     '@nuxt/content',
     '@nuxtjs/color-mode',
@@ -23,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-content-assets',
     'nuxt-gtag',
+    'nuxt-proxy',
   ],
   postcss: {
     plugins: {
@@ -31,8 +36,21 @@ export default defineNuxtConfig({
       'postcss-simple-vars': {},
     }
   },
-  compatibilityDate: '2024-10-24',
-  gtag: {
-    id: 'G-30HMKNVJE0',
+  proxy: {
+    options: {
+      target: 'https://www.serializd.com/',
+      changeOrigin: true,
+      headers: {
+        'x-requested-with': 'serializd_vercel',
+      },
+      pathRewrite: {
+        '^/serializd/user/burgbits/watched': '/api/user/burgbits/diary?include_target=ALL',
+        '^/serializd/user/burgbits/watching': '/api/user/burgbits/currently_watching_page/1?sort_by=date_added_desc',
+      },
+      pathFilter: [
+        '/serializd/user/burgbits/watched',
+        '/serializd/user/burgbits/watching',
+      ]
+    }
   }
 })
