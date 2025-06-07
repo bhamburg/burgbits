@@ -13,7 +13,7 @@ const parseLetterboxd = async (url: string) => {
   films?.forEach((film: any) => {
     const trimmedTitle = film.title.split(' - ')[0]
     const formattedDate = film.isoDate 
-      ? new Date(film.isoDate).toLocaleDateString("en-GB", { month: 'short', day: 'numeric', year: 'numeric' }) 
+      ? new Date(film.isoDate).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' }) 
       : undefined
     items.push({
       coverSrc: film.content.split('\"')[1],

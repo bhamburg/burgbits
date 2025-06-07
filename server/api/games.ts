@@ -13,7 +13,7 @@ const parseGrouvee = async (api: string) => {
   let items = new Array
   games?.forEach((game: any) => {
     const formattedDate = getLatestPlaythrough(game?.dates)?.date_finished 
-      ? new Date(getLatestPlaythrough(game.dates).date_finished).toLocaleDateString("en-GB", { month: 'short', day: 'numeric', year: 'numeric' }) 
+      ? new Date(getLatestPlaythrough(game.dates).date_finished).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' }) 
       : undefined
     items.push({
       completionLevel: getLatestPlaythrough(game?.dates)?.level_of_completion,

@@ -116,7 +116,7 @@ watchEffect(() => {
             overflow-hidden" 
           target="_blank"
         >
-          <div v-if="item.dateFinished" 
+          <div v-if="item.dateFinished && !shelf.title.toLowerCase().includes('current')" 
             class="
               bg-black 
               text-white 
@@ -131,7 +131,7 @@ watchEffect(() => {
               translate-x-1/2
               rotate-45"
           >
-            {{ item.dateFinished?.slice(0, item.dateFinished.length - 5) }}
+            {{ item.dateFinished?.split(",")[0] }}
           </div>
           <img :alt="item.title" 
             :src="item.coverSrc" 

@@ -16,7 +16,7 @@ const parseGoodreads = async (url: string) => {
     // dates are not uniform, so we need to parse them out
     const parsedDate = row.querySelector('.field.date_read')?.querySelectorAll('.date_row')?.at(0)?.querySelector('.date_read_value')?.text || ''
     const formattedDate = parsedDate 
-      ? new Date(parsedDate).toLocaleDateString("en-GB", { day: 'numeric', month: 'short', year: 'numeric' }) 
+      ? new Date(parsedDate).toLocaleDateString("en-US", { day: 'numeric', month: 'short', year: 'numeric' }) 
       : undefined
     items.push({
       // author
