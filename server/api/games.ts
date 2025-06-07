@@ -47,7 +47,7 @@ export default defineCachedEventHandler(async () => {
         items: await parseGrouvee(playingApi),
       },
       { 
-        title: 'Recently Played',
+        title: 'Recently Finished',
         fetchedFrom: finishedUrl,
         items: await parseGrouvee(finishedApi),
       }

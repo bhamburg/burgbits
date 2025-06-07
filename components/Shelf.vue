@@ -97,7 +97,7 @@ watchEffect(() => {
 
       <!-- grid view -->
       <div v-show="!isTable" class="flex flex-row flex-wrap items-end justify-center md:justify-start no-underline">
-        <NuxtLink v-for="item in shelf.items.slice(0, 17)" :key="item.title" :title="
+        <NuxtLink v-for="item in shelf.items.slice(0, 17)" :key="item.title+'-'+item.dateFinished" :title="
             item.title  
             + (item.author ? ` - ${item.author}` : '') 
             + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')
@@ -216,7 +216,7 @@ watchEffect(() => {
                 </span>
               </th>
               <th 
-                v-if="shelf.title.toLowerCase().includes('play')" 
+                v-if="shelf.title.toLowerCase().includes('play') || shelf.title.toLowerCase().includes('finished')" 
                 class="p-2 cursor-pointer"
                 @click="sortByColumn('platform')">
                 Platform
@@ -236,10 +236,10 @@ watchEffect(() => {
                   <span v-else title="sorted descending by author">▼</span>
                 </span>
               </th>
-              <th v-if="shelf.title.toLowerCase().includes('played')" class="p-2">
+              <th v-if="shelf.title.toLowerCase().includes('finished')" class="p-2">
                 New
               </th>
-              <th v-if="shelf.title.toLowerCase().includes('played')" class="p-2">
+              <th v-if="shelf.title.toLowerCase().includes('finished')" class="p-2">
                 100%
               </th>
               <th 
@@ -258,7 +258,7 @@ watchEffect(() => {
           <tbody>
             <tr 
               v-for="item in sortedShelf(shelf).__sortedItems" 
-              :key="item.title" 
+              :key="item.title+'-'+item.dateFinished" 
               class="h-14 odd:bg-zinc-200 dark:odd:bg-zinc-600"
             >
               <td 
@@ -272,11 +272,11 @@ watchEffect(() => {
               </td>
               <td v-if="item.platforms" class="p-2">{{ item.platforms?.at(-1) }}</td>
               <td v-if="item.author" class="p-2">{{ item.author }}</td>
-              <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')" 
+              <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-emerald-500 text-center text-2xl p-2">
                 <span v-if="item.firstTime" class="cursor-help" title="first playthrough">✔</span>
               </td>
-              <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('played')" 
+              <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-sky-600 text-center text-2xl p-2">
                 <span v-if="item.completionLevel === 'A'" class="cursor-help" title="100% completion">✔</span>
               </td>
