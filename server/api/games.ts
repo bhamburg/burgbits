@@ -44,12 +44,12 @@ export default defineCachedEventHandler(async () => {
       { 
         title: 'Currently Playing',
         fetchedFrom: playingUrl,
-        items: await parseGrouvee(playingApi),
+        items: ['testing'] // await parseGrouvee(playingApi),
       },
       { 
         title: 'Recently Finished',
         fetchedFrom: finishedUrl,
-        items: await parseGrouvee(finishedApi),
+        items: ['testing'] // await parseGrouvee(finishedApi),
       }
     ],
   }
