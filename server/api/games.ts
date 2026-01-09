@@ -1,3 +1,5 @@
+import sample from './games-1-8-2026.json' assert { type: 'json' }
+
 const appName = 'Grouvee'
 const grouveeUrl = 'https://www.grouvee.com'
 const profileUrl = grouveeUrl + '/user/21384-burgbits/shelves/'
@@ -40,21 +42,22 @@ const getLatestPlaythrough = (datesArray: any[]) => {
 }
 
 export default defineCachedEventHandler(async () => {
-  return {
-    appName,
-    profileUrl,
-    fetched: new Date(),
-    shelves: [
-      { 
-        title: 'Currently Playing',
-        fetchedFrom: playingUrl,
-        items: await parseGrouvee(playingApi),
-      },
-      { 
-        title: 'Recently Finished',
-        fetchedFrom: finishedUrl,
-        items: await parseGrouvee(finishedApi),
-      }
-    ],
-  }
+  return sample
+  // return {
+  //   appName,
+  //   profileUrl,
+  //   fetched: new Date(),
+  //   shelves: [
+  //     { 
+  //       title: 'Currently Playing',
+  //       fetchedFrom: playingUrl,
+  //       items: await parseGrouvee(playingApi),
+  //     },
+  //     { 
+  //       title: 'Recently Finished',
+  //       fetchedFrom: finishedUrl,
+  //       items: await parseGrouvee(finishedApi),
+  //     }
+  //   ],
+  // }
 }, { maxAge: 60 /* seconds */ })
